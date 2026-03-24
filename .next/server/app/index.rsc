@@ -1,0 +1,10 @@
+2:I[9107,[],"ClientPageRoot"]
+3:I[147,["590","static/chunks/590-2ae956e3bdb3c3f7.js","797","static/chunks/797-50a8451e9d5a8710.js","848","static/chunks/848-4c2a1c8478e8a73d.js","931","static/chunks/app/page-66055a7fc2cdf548.js"],"default",1]
+4:I[6384,["590","static/chunks/590-2ae956e3bdb3c3f7.js","326","static/chunks/326-7dd197a1acd186f0.js","185","static/chunks/app/layout-7705c0e3a0fd1dfb.js"],"Providers"]
+5:I[4707,[],""]
+6:I[6423,[],""]
+7:I[5176,["590","static/chunks/590-2ae956e3bdb3c3f7.js","160","static/chunks/app/not-found-dea830dc936efae5.js"],"default"]
+8:I[9556,["590","static/chunks/590-2ae956e3bdb3c3f7.js","326","static/chunks/326-7dd197a1acd186f0.js","185","static/chunks/app/layout-7705c0e3a0fd1dfb.js"],"Toaster"]
+0:["oHRUHU0I8-386HlT55WYL",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",{"children":["__PAGE__",{},[["$L1",["$","$L2",null,{"props":{"params":{},"searchParams":{}},"Component":"$3"}],null],null],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5a86d01f97b946af.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"en","children":["$","body",null,{"className":"__className_f367f3","children":["$","$L4",null,{"children":[["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L7",null,{}],"notFoundStyles":[]}],["$","$L8",null,{}]]}]}]}]],null],null],["$L9",null]]]]
+9:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"AI Agency Hub"}],["$","meta","3",{"name":"description","content":"Advanced AI agency tools and automation suite."}]]
+1:null
