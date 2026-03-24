@@ -1,0 +1,298 @@
+IIT AI Studio by Aiberry
+
+Founders: Dai Murata & Hardik Advani
+Tagline: Building Production-Ready AI Systems for Real Businesses
+
+The website must have:
+
+Landing Page
+
+Products Page
+
+Individual Product Detail Pages
+
+Pricing Page
+
+Contact Page
+
+Use a clean, modern, AI-startup style design (dark + minimal + professional).
+
+🟣 LANDING PAGE CONTENT
+Hero Section
+
+Headline:
+IIT AI Studio by Aiberry
+
+Subheading:
+We build production-ready AI agents, workflow automations, and full-stack AI systems that solve real business problems.
+
+CTA Buttons:
+
+View Our AI Tools
+
+Contact Us
+
+What We Build Section
+
+Title:
+AI Systems That Actually Work
+
+Description:
+We design and deploy AI-powered automation systems using n8n, LLMs, full-stack frameworks, and cloud deployment. Our solutions integrate directly with real-world workflows and scale with business needs.
+
+Core Capabilities
+
+AI Calling Agents
+
+AI Newsletter & Media Aggregators
+
+Automated Email Outreach Systems
+
+CRM & Dashboard Automation
+
+Data Engineering & SQL Systems
+
+Full-Stack AI Applications
+
+Cloud Deployment (AWS, Vercel)
+
+Python APIs (Flask)
+
+MERN Stack Development
+
+CTA:
+Explore Our Products
+
+🟣 PRODUCTS PAGE
+
+Title:
+Our AI Tools
+
+Show product cards for the following 3 main tools:
+
+Calling Agents
+
+Newsletter Magazine Agent
+
+Automatic Email Sender
+
+Each card should contain:
+
+Tool name
+
+2-line description
+
+Button: “View Details”
+
+Clicking each card should open its own detailed page.
+
+🟣 PRODUCT DETAIL PAGES
+1️⃣ CALLING AGENTS
+
+Title:
+AI Calling Agents for Sales & Credit Recovery
+
+Description:
+AI-powered voice calling agents built for sales, credit recovery, and general business operations. Integrated with dashboards and file-based workflows for seamless execution.
+
+Features
+
+Calling agents for sales / credit recovery / general purpose
+
+Uses Retell AI for calling and voice scripting
+
+Twilio integration for number sourcing
+
+Connected to dashboards and webhooks
+
+Input/Output support via XLSX/CSV files
+
+Use Cases
+
+Sales & Product Pitching
+
+Banks & Money Lenders
+
+Large Team Management
+
+Record Updates & Tracking
+
+How It Works Section
+
+Explain visually:
+Webhook → Extract CSV → HTTP Request → AI Call → Update Data → Convert to XLSX → Respond to Webhook
+
+2️⃣ NEWSLETTER MAGAZINE AGENT
+
+Title:
+AI Newsletter & Media Aggregation System
+
+Description:
+An AI system that merges news from multiple media sources into one structured output, categorizes content using LLMs, and automatically sends back responses.
+
+Features
+
+Merges news from multiple media into one
+
+Different route handling for each case
+
+Uses LLM (Gemini) for categorizing similar tools/content
+
+Automatically mails back generated response
+
+Use Cases
+
+Conversation Reviewer
+
+Auto-reply Emails
+
+Client Management
+
+Reply via any device
+
+How It Works Section
+
+Illustrate workflow:
+Multiple Media Sources → Trigger → Merge → LLM Processing (Gemini) → AI Agent → Email Response
+
+3️⃣ AUTOMATIC EMAIL SENDER
+
+Title:
+Automated AI Email Outreach System
+
+Description:
+An automated AI-driven email sender built for sales, lead generation, GTM outreach, and scheduled follow-ups.
+
+Features
+
+Automatic email sender for sales & lead generation
+
+Triggered automatically every day
+
+Writes content based on contextual variables
+
+Fetches files from GitHub / Drive / S3
+
+Loops in small batches to reduce AI load
+
+Updates source file after sending for tracking
+
+Use Cases
+
+GTM & Product Outreach
+
+Cold Mailing
+
+Lead Generation
+
+Scheduled Follow-ups
+
+Workflow Section
+
+Schedule Trigger → Read Sheet → Loop Items → AI Agent → Fetch Resume/Data → Send Email → Update Sheet
+
+🟣 ADDITIONAL SERVICES SECTION (ON PRODUCTS PAGE OR SEPARATE PAGE)
+
+Title:
+More in n8n & Full Stack
+
+Include:
+
+SNS Promotions (Instagram / X / LinkedIn)
+
+Content Creation (YouTube / Veo3)
+
+CRM Management & Dashboarding
+
+Data Engineering
+
+CRM Systems (Snowflake, MongoDB)
+
+SQL Querying
+
+No-Code CRMs (Wix, Wordpress)
+
+Full-Stack Development
+
+MERN Stack (Mongo, Express, React, Node)
+
+Deployment (AWS, Vercel)
+
+Python Scripting (Flask APIs)
+
+🟣 PRICING PAGE
+
+Title:
+Flexible Pricing for Every Business
+
+Include 3 plans:
+
+Starter
+
+Basic workflow automation
+
+1 AI agent
+
+Email support
+
+Growth
+
+Multi-agent systems
+
+Dashboard integration
+
+Cloud deployment
+
+Priority support
+
+Enterprise
+
+Custom AI systems
+
+Full-stack development
+
+CRM & Data engineering integration
+
+Dedicated support
+
+CTA:
+Book a Consultation
+
+🟣 CONTACT PAGE
+
+Title:
+Let’s Build Your AI System
+
+Include:
+
+Name
+
+Company
+
+Email
+
+Phone
+
+Use Case Description
+
+Submit Button
+
+Add:
+“IIT AI Studio by Aiberry”
+Founders: Dai Murata & Hardik Advani
+
+🎨 DESIGN INSTRUCTIONS
+
+Dark theme
+
+Modern SaaS style
+
+Gradient accents (purple/blue)
+
+Smooth hover effects
+
+Clean AI/tech typography
+
+Animated cards
+
+Professional startup look

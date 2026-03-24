@@ -1,0 +1,180 @@
+Absolutely — below is a **ready-to-use prompt** you can give to Replit that will rewrite your entire website into a **Question-Based Format**, just as your manager described. It follows the structure of *user problem → our solution → next steps*, and it’s tailored to your service *“My Mail Magazine”* and other tools from IIT AI Studio.
+
+---
+
+# ✅ COPY-PASTE THIS INTO REPLIT
+
+---
+
+Create a modern, responsive website for **IIT AI Studio by Aiberry**.
+
+The site should use a **Question-Answer format** throughout, reflecting the real user pain points and how our AI tools solve them.
+
+The website must include:
+
+* **Landing Page**
+* **Product Page** (with cards)
+* **Individual Tool Pages** (one per tool)
+* **Pricing Page**
+* **Contact Us Page**
+
+Use a clean design with smooth animations and a professional tech aesthetic.
+
+---
+
+## 🟣 LANDING PAGE (QA STYLE)
+
+**Q: Are you spending hours doing tasks AI could handle in minutes?**
+**A:** IIT AI Studio builds production-ready AI agents that save your time and scale your business. From auto-calling to email sorting — we automate your workflow so you can focus on growing.
+
+**Q: Who are we?**
+**A:** We’re IIT AI Studio by Aiberry — founded by Dai Murata and Hardik Advani — building real AI systems used by businesses worldwide.
+
+**Q: What kind of work do we automate?**
+**A:** Sales calls, lead generation emails, newsletter summarization, data input, CRM management, and more.
+
+**Q: Why choose us?**
+**A:** Because our tools plug directly into your business — no extra setup, no fluff. Just time saved and performance boosted.
+
+CTA Button: “Explore Our AI Tools”
+
+---
+
+## 🟣 PRODUCT PAGE
+
+Title: **Which Problem Are You Trying to Solve?**
+
+Show 3 product cards (one per tool). Each card should be in question form:
+
+1. **Q: Want to stop making manual calls for sales or credit recovery?**
+   **A:** Meet our **AI Calling Agent** — it handles voice calls using scripts and updates your dashboards in real-time.
+
+2. **Q: Tired of manually reading and organizing news from multiple sources?**
+   **A:** Try **My Mail Magazine** — it merges media sources, categorizes content using LLMs, and emails you a digest version.
+
+3. **Q: Spending too much time writing emails for lead generation?**
+   **A:** Let our **Auto Email Sender** draft, schedule, and send your outreach — fully automated, daily.
+
+Each card should link to its individual tool page.
+
+---
+
+## 🟣 TOOL PAGE: My Mail Magazine
+
+**Q: What is the problem?**
+**A:** You receive multiple newsletters and emails every day. Reading, understanding, and integrating them into your work takes too long.
+
+**Q: How does this waste time?**
+**A:** Valuable insights are buried. You lose hours summarizing content or never get to it at all.
+
+**Q: What is the solution?**
+**A:** Our tool **“My Mail Magazine”** uses AI to merge, filter, and rewrite all your incoming newsletters into one simplified summary — and sends it straight back to you.
+
+**Q: What makes it smart?**
+**A:** It uses Gemini LLM to detect similar tools/topics, writes in your preferred tone, and can auto-respond or format it for team sharing.
+
+**Q: Who is this for?**
+**A:** Founders, analysts, and marketers who need to scan vast information quickly — and move faster.
+
+**Q: What are the perks?**
+
+* Reads & merges emails/news sources
+* Summarizes by relevance
+* Auto-replies or schedules responses
+* Integrates with Gmail, Notion, Slack
+
+CTA: “Try My Mail Magazine Now”
+
+---
+
+## 🟣 TOOL PAGE: AI Calling Agent
+
+**Q: Are your sales or credit teams wasting time making routine calls?**
+**A:** Our **Calling Agent** uses AI to call leads or customers, pitch products, and update your CRM — hands-free.
+
+**Q: What does it connect to?**
+**A:** Retell AI for voice, Twilio for phone numbers, and your dashboards via webhooks.
+
+**Q: What kind of calls?**
+
+* Sales/Product Demos
+* Credit Recovery
+* Customer Follow-ups
+* Mass Notifications
+
+**Q: What’s the input/output?**
+XLSX or CSV files — in, out, and updated.
+
+CTA: “Automate My Calls”
+
+---
+
+## 🟣 TOOL PAGE: Auto Email Sender
+
+**Q: Cold emailing taking too much time?**
+**A:** This tool writes and sends personalized emails daily, loops through lists, and updates the source with each sent message.
+
+**Q: How is it smart?**
+
+* Writes using context variables
+* Fetches files from GitHub/Drive/S3
+* Sends in low-batch loops for better performance
+* Tracks open and response rate
+
+**Q: Use cases?**
+
+* Product outreach
+* Lead gen
+* Partnership outreach
+* Follow-ups
+
+CTA: “Boost My Outreach”
+
+---
+
+## 🟣 PRICING PAGE (QA Style)
+
+**Q: How much does this cost?**
+
+**Starter Plan**
+Ideal for trying out our tools.
+
+* 1 AI agent
+* Basic support
+* $29/mo
+
+**Growth Plan**
+Perfect for growing teams.
+
+* Multi-agent access
+* Dashboard integrations
+* $99/mo
+
+**Enterprise Plan**
+Custom solutions for large ops.
+
+* Custom workflows
+* Dedicated support
+* Contact for pricing
+
+CTA: “Get a Quote” or “Start Free Trial”
+
+---
+
+## 🟣 CONTACT US PAGE
+
+**Q: Still unsure if AI is for you?**
+**A:** Let’s talk. Tell us what you’re spending time on — we’ll tell you if we can automate it.
+
+Form Fields:
+
+* Name
+* Email
+* Company
+* What do you want to automate?
+
+CTA: “Talk to an AI Specialist”
+
+---
+
+Let me know if you want a version of this prompt specifically focused on **My Mail Magazine only**, or adjusted for a pitch deck, blog, or investor site.

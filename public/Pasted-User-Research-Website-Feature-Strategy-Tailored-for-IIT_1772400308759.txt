@@ -1,0 +1,82 @@
+User Research & Website Feature Strategy
+Tailored for IIT AI Studio's Three Core AI Tools
+
+Executive Summary
+IIT AI Studio is developing a website to showcase three core AI automation services: Calling Agents, Newsletter Magazine, and Automatic Email Sender. The goal is to drive lead generation and direct sales by clearly addressing user problems and positioning each tool as a purpose-built solution. This document captures user personas, journey flows, messaging, and feature recommendations based on those three services.
+
+User Personas
+Raj (Sales Manager, SMB, Age 34)
+Pain Point: His sales team spends hours daily making repetitive calls to cold leads.
+Needs: An automated solution that can pitch products and update CRM records.
+Tool Fit: Calling Agents
+Meera (Startup Founder, Age 29)
+Pain Point: Receives 10+ newsletters daily but has no time to read and summarize them for business use.
+Needs: A single, digestible update tailored to her preferences.
+Tool Fit: Newsletter Magazine
+Ankit (Marketing Associate, Tech Firm, Age 26)
+Pain Point: Manually drafts and sends cold emails for lead gen campaigns every day.
+Needs: A tool that automates email generation, sending, and follow-up.
+Tool Fit: Automatic Email Sender
+
+6W2H Analysis
+Who: Small business teams, startup founders, sales/marketing professionals.
+What (Problem): Time-intensive manual workflows: cold calling, email outreach, newsletter digestion.
+What (Our Service): 3 core tools:
+Calling Agents (voice-based AI calling)
+Newsletter Magazine (LLM-curated newsletter summaries)
+Automatic Email Sender (context-based email automation)
+Why (They Buy): Users want faster workflows, better efficiency, and scalable outreach with low effort.
+Where (They Come From): LinkedIn, founder/tech newsletters, direct search (e.g., "AI email automation for startups").
+When: During campaign planning, product launches, quarterly reviews.
+How: Users land via a targeted ad or article, browse tool cards, and click into individual product pages.
+How Much: Compared to hiring or using multiple SaaS tools, IIT AI Studio offers modular, lower-cost automation. ROI is high from the first successful deployment.
+
+User Journey Flow
+Scenario: Meera (Founder) discovers the "Newsletter Magazine" tool
+Searches: “summarize newsletters with AI” → finds our site.
+Lands on Homepage → Sees question-style headline: “Reading newsletters takes too long?”
+Clicks into Newsletter Tool Page
+Reads key benefits: LLM curation, sends summaries, replies enabled.
+Sees sample screenshots + testimonial
+Call to Action: “Try It on Your Inbox”
+Clicks demo or contact form → Enters email
+
+Page-Specific Feature Recommendations (All QA Style)
+Homepage:
+Q: "Is AI the answer to your repetitive work?"
+A: IIT AI Studio builds voice, email, and text AI agents for real-world workflows.
+Features: Intro video or visual, CTA to “Explore Tools,” 3 big cards: Call, Mail, News.
+Product Page:
+Each card starts with a question:
+“Spending hours on cold calls?” → Calling Agent
+“Drowning in unread newsletters?” → Newsletter Magazine
+“Writing sales emails manually?” → Auto Email Sender
+Individual Tool Pages:
+Calling Agent
+Q: Who needs it? → Sales teams, banks, update campaigns
+Q: What can it do? → Make calls, script via Retell AI, record responses, update Excel files
+Visual: flowchart (from PDF page 2)【41†source】
+Newsletter Magazine
+Q: What’s the pain point? → You get 5+ newsletters/day but gain little from them.
+Q: How do we fix it? → We merge, LLM-sort, and email it back.
+Visual: multi-source to email flow (PDF page 3)【41†source】
+Automatic Email Sender
+Q: Why automate emails? → You’re scaling, not typing.
+Q: What does it do? → Context-based email writing + daily trigger + status updates
+Visual: loop flow from spreadsheet to email (PDF page 4)【41†source】
+Pricing Page:
+Format pricing per tool or bundle:
+Starter: 1 Tool
+Growth: Any 2 Tools
+Enterprise: All tools + custom flows
+Contact Page:
+Q: Curious if our tools are right for you?
+A: Tell us what task you want to automate.
+
+Next Steps
+Design in question-first language
+Emphasize visuals from workflows (inspired by diagrams in PDF)
+Link every pain point directly to the AI tool that solves it
+Guide user flow from “problem felt” to “tool explored” to “trial started”
+
+

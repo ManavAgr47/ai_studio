@@ -1,0 +1,21 @@
+
+> build
+> next build
+
+  Γû▓ Next.js 14.2.14
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+Failed to compile.
+
+./hooks/use-tools.ts:21:14
+Type error: Operator '<' cannot be applied to types '<T>(schema: any, data: unknown, label: string) => T' and 'string'.
+
+  19 |       if (!res.ok) throw new Error('Failed to fetch tools');
+  20 |       const data = await res.json();
+> 21 |       return parseWithLogging < typeof api.tools.list.responses[200]._type > (
+     |              ^
+  22 |         api.tools.list.responses[200],
+  23 |         data,
+  24 |         "tools.list"
