@@ -29,7 +29,10 @@ export default function Products() {
           {[
             { q: "Spending hours on cold calls?", a: "Calling Agent", link: "/tools/calling-agents" },
             { q: "Drowning in unread newsletters?", a: "Newsletter Magazine", link: "/tools/newsletter-magazine-agent" },
-            { q: "Writing sales emails manually?", a: "Auto Email Sender", link: "/tools/automatic-email-sender" }
+            { q: "Writing sales emails manually?", a: "Auto Email Sender", link: "/tools/automatic-email-sender" },
+            { q: "Losing leads to slow follow-ups?", a: "Sales Automation Tool", link: "/tools/sales-automation" },
+            { q: "Struggling to integrate AI into your ops?", a: "Claude Code & Cowork", link: "/tools/claude-code-cowork" },
+            { q: "OpenClaw too complex to set up?", a: "OpenClaw Setup", link: "/tools/openclaw-setup" }
           ].map((item, idx) => (
             <motion.div
               key={idx}

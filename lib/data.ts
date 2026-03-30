@@ -45,5 +45,56 @@ export const toolsData: Tool[] = [
         ],
         imageUrl: "/email.jpeg",
         price: "Contact for Pricing",
+    },
+    {
+        id: 4,
+        slug: "sales-automation",
+        name: "Sales Automation Tool",
+        description: "Q: Losing leads to slow follow-ups?\nA: Our Sales Automation Tool runs personalized email campaigns at scale — with smart targeting, attachments, and performance tracking.",
+        application: "Cold emailing for SaaS or services, GTM campaigns, Follow-up drips, Partner/investor outreach",
+        perks: [
+            "Automated email sequences daily",
+            "Personalized emails using contact database",
+            "Attaches proposals, pitch decks, and portfolios",
+            "Tracks opens, clicks, and replies",
+            "CSV or Google Sheet upload support",
+            "Auto-engagement column updates"
+        ],
+        imageUrl: "/sales-automation.png",
+        price: "Contact for Pricing",
+    },
+    {
+        id: 5,
+        slug: "claude-code-cowork",
+        name: "Claude Code & Cowork",
+        description: "Q: Struggling to integrate AI into your ops?\nA: Claude Code & Cowork helps your team build and deploy intelligent systems — without the setup headache.",
+        application: "Internal copilots, Decision support agents, Workflow automation (Zapier, n8n, OpenClaw)",
+        perks: [
+            "Sets up AI tools (Claude, Retell, GPT)",
+            "Custom workflow design (chat, text, voice)",
+            "Team training on AI usage",
+            "Continuous optimization with feedback",
+            "Internal copilots for docs, emails, chats",
+            "Decision support agent deployment"
+        ],
+        imageUrl: "/claude-cowork.png",
+        price: "Contact for Pricing",
+    },
+    {
+        id: 6,
+        slug: "openclaw-setup",
+        name: "OpenClaw Setup",
+        description: "Q: OpenClaw too complex to set up?\nA: We handle the configuration, integration, and deployment so your flows are production-ready from day one.",
+        application: "Automated reporting, Lead routing, Email triggers, CRM syncing",
+        perks: [
+            "Full OpenClaw installation & configuration",
+            "Workflow design using real use cases",
+            "Integrates Notion, Slack, email, CRM",
+            "Enterprise-grade scale & security",
+            "Observability and monitoring built-in",
+            "Production-ready deployment"
+        ],
+        imageUrl: "/openclaw-setup.png",
+        price: "Contact for Pricing",
     }
 ];

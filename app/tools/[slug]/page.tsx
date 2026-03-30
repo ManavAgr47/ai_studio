@@ -34,6 +34,27 @@ export default function ToolDetail() {
           { q: "Why automate emails?", a: "You’re scaling, not typing. This tool writes and sends personalized emails daily, loops through lists, and updates the source with each sent message." },
           { q: "What does it do?", a: "Context-based email writing + daily trigger + status updates. It writes using context variables, fetches files from GitHub/Drive/S3, sends in low-batch loops, and tracks engagement." }
         ];
+      case 'sales-automation':
+        return [
+          { q: "What's the pain point?", a: "Your leads deserve more than bulk emails. Manual outreach takes time and drains creativity. You need personalized campaigns at scale." },
+          { q: "What does it do?", a: "Sends automated email sequences daily, personalizes emails using your contact database, attaches proposals and pitch decks, and tracks opens, clicks, and replies." },
+          { q: "Who is this for?", a: "Sales & BD teams, early-stage founders, agencies scaling outreach, and anyone sending lots of cold emails." },
+          { q: "How does it work?", a: "Upload your contact CSV or Google Sheet. The tool auto-sends and updates engagement columns — your emails feel human while running 24/7." }
+        ];
+      case 'claude-code-cowork':
+        return [
+          { q: "What does it do?", a: "Sets up AI tools (Claude, Retell, GPT) for your business. Designs custom workflows — chat, text, and voice. Trains your team on usage and optimizes continuously with feedback." },
+          { q: "Who is this for?", a: "AI-first startups, product or operations teams, founders exploring workflow AI, and internal teams with repetitive tasks." },
+          { q: "Why does it matter?", a: "AI isn't magic — it's systems thinking. We help you connect tools to tasks that save real hours." },
+          { q: "What workflows can you build?", a: "Internal copilots for docs, emails, and chats. Decision support agents. Workflow automation using Zapier, n8n, and OpenClaw." }
+        ];
+      case 'openclaw-setup':
+        return [
+          { q: "What does it do?", a: "Installs and configures OpenClaw for your org. Designs workflows using real use cases. Integrates tools like Notion, Slack, email, and CRM. Ensures scale, security, and observability." },
+          { q: "Who is this for?", a: "Technical teams exploring OpenClaw, consultants building client automation, and founders deploying internal workflows." },
+          { q: "Why does it matter?", a: "OpenClaw is powerful — but setup isn't simple. We make it frictionless so you can focus on outcomes." },
+          { q: "What are typical workflows?", a: "Automated reporting, lead routing, email triggers, and CRM syncing — all production-ready from day one." }
+        ];
       default:
         return [];
     }
@@ -59,7 +80,10 @@ export default function ToolDetail() {
 
   const ctaText = slug === 'newsletter-magazine-agent' ? 'Try It on Your Inbox' :
     slug === 'calling-agents' ? 'Automate My Calls' :
-      'Boost My Outreach';
+      slug === 'sales-automation' ? 'Supercharge My Sales' :
+        slug === 'claude-code-cowork' ? 'Build with AI' :
+          slug === 'openclaw-setup' ? 'Deploy My Workflows' :
+            'Boost My Outreach';
 
   const getFlowchart = (toolSlug: string) => {
     switch (toolSlug) {
@@ -99,6 +123,45 @@ export default function ToolDetail() {
               <div className="px-4 py-2 border border-accent/30 rounded-lg bg-accent/10 text-white">Context-Based Writing Loop</div>
               <div className="h-8 w-px bg-white/10" />
               <div className="px-4 py-2 border border-white/10 rounded-lg">Daily Outreach & Tracking</div>
+            </div>
+          </div>
+        );
+      case 'sales-automation':
+        return (
+          <div className="mt-12 p-6 glass-panel rounded-2xl border-white/5 bg-primary/5">
+            <h4 className="text-sm font-bold text-primary mb-4 uppercase tracking-widest">System Flow</h4>
+            <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground">
+              <div className="px-4 py-2 border border-white/10 rounded-lg">Contact CSV / Google Sheet</div>
+              <div className="h-8 w-px bg-white/10" />
+              <div className="px-4 py-2 border border-primary/30 rounded-lg bg-primary/10 text-white">Personalized Email Engine</div>
+              <div className="h-8 w-px bg-white/10" />
+              <div className="px-4 py-2 border border-white/10 rounded-lg">Engagement Tracking & Updates</div>
+            </div>
+          </div>
+        );
+      case 'claude-code-cowork':
+        return (
+          <div className="mt-12 p-6 glass-panel rounded-2xl border-white/5 bg-secondary/5">
+            <h4 className="text-sm font-bold text-secondary mb-4 uppercase tracking-widest">System Flow</h4>
+            <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground">
+              <div className="px-4 py-2 border border-white/10 rounded-lg">AI Tools (Claude, Retell, GPT)</div>
+              <div className="h-8 w-px bg-white/10" />
+              <div className="px-4 py-2 border border-secondary/30 rounded-lg bg-secondary/10 text-white">Custom Workflow Builder</div>
+              <div className="h-8 w-px bg-white/10" />
+              <div className="px-4 py-2 border border-white/10 rounded-lg">Deployed Copilots & Agents</div>
+            </div>
+          </div>
+        );
+      case 'openclaw-setup':
+        return (
+          <div className="mt-12 p-6 glass-panel rounded-2xl border-white/5 bg-accent/5">
+            <h4 className="text-sm font-bold text-accent mb-4 uppercase tracking-widest">System Flow</h4>
+            <div className="flex flex-col items-center gap-4 text-sm text-muted-foreground">
+              <div className="px-4 py-2 border border-white/10 rounded-lg">Use Case & Tool Mapping</div>
+              <div className="h-8 w-px bg-white/10" />
+              <div className="px-4 py-2 border border-accent/30 rounded-lg bg-accent/10 text-white">OpenClaw Configuration Engine</div>
+              <div className="h-8 w-px bg-white/10" />
+              <div className="px-4 py-2 border border-white/10 rounded-lg">Production-Ready Automation</div>
             </div>
           </div>
         );
