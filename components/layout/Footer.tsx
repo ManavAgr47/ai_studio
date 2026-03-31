@@ -26,7 +26,7 @@ export function Footer() {
                 <Cpu className="w-5 h-5 text-primary" />
               </div>
               <span className="font-display font-bold text-xl tracking-wide text-foreground">
-                NEXUS<span className="text-primary">.AI</span>
+                IIT <span className="text-primary">AI Studio</span>
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-8">
@@ -69,7 +69,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} Nexus AI Agency. All rights reserved.
+            &copy; {new Date().getFullYear()} IIT AI Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <span>Status:</span>

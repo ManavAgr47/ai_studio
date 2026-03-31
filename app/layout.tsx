@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 const GA_MEASUREMENT_ID = "G-CH71WMMT63";
 
 export const metadata: Metadata = {
-    title: "AI Agency Hub",
+    title: "IIT AIS",
     description: "Advanced AI agency tools and automation suite.",
 };
 
