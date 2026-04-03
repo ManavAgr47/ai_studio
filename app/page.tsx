@@ -1,35 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, BrainCircuit, Code, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, Code2, Users2, Sparkles, Building2, GraduationCap } from "lucide-react";
 import Link from "next/link";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ButtonGlow } from "@/components/ui/ButtonGlow";
 
 export default function Home() {
-  const qaItems = [
-    {
-      q: "Is AI the answer to your repetitive work?",
-      a: "IIT AI Studio builds voice, email, and text AI agents for real-world workflows. From auto-calling to email sorting — we automate your workflow so you can focus on growing."
-    },
-    {
-      q: "Who are we?",
-      a: "We’re IIT AI Studio by Aiberry — founded by Dai Murata and Hardik Advani — building real AI systems used by businesses worldwide."
-    },
-    {
-      q: "What kind of work do we automate?",
-      a: "Sales calls, lead generation emails, newsletter summarization, data input, CRM management, and more."
-    },
-    {
-      q: "Why choose us?",
-      a: "Because our tools plug directly into your business — no extra setup, no fluff. Just time saved and performance boosted."
-    }
-  ];
-
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden flex flex-col items-center text-center px-4 sm:px-6 lg:px-8">
-        
+      <section className="relative pt-32 pb-16 md:pt-48 md:pb-24 overflow-hidden flex flex-col items-center text-center px-4 sm:px-6 lg:px-8">
+
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
@@ -43,88 +24,124 @@ export default function Home() {
           <span>Founders: Dai Murata & Hardik Advani</span>
         </motion.div>
 
-        <motion.h1 
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white max-w-4xl mx-auto leading-[1.1] mb-6"
+        <motion.h1
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white max-w-5xl mx-auto leading-[1.1] mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          IIT AI Studio <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent text-glow">
-            by Aiberry
-          </span>
+          IIT AI Studio
         </motion.h1>
 
-        <motion.p 
+        <motion.p
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Building Production-Ready AI Systems for Real Businesses
+          Bridging the gap between cutting-edge AI development and elite IIT talent recruitment.
         </motion.p>
-
-        <motion.div 
-          className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          <Link href="/products">
-            <ButtonGlow size="lg" className="w-full sm:w-auto" data-testid="button-explore-products">
-              Explore Tools <ArrowRight className="w-5 h-5 ml-2" />
-            </ButtonGlow>
-          </Link>
-          <Link href="/contact">
-            <ButtonGlow variant="outline" size="lg" className="w-full sm:w-auto" data-testid="button-contact-us">
-              Contact Us
-            </ButtonGlow>
-          </Link>
-        </motion.div>
       </section>
 
-      {/* QA Section */}
-      <section className="py-24 relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12">
-            {qaItems.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                className="glass-panel p-8 rounded-2xl border-white/5"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-              >
-                <h3 className="text-xl font-bold text-primary mb-4 font-display">Q: {item.q}</h3>
-                <div className="text-muted-foreground text-lg leading-relaxed flex gap-2">
-                  <span className="text-white font-bold shrink-0">A:</span>
-                  <span>{item.a}</span>
+      {/* Two Pillars Section */}
+      <section className="py-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+
+            {/* Pillar 1: Development */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="glass-panel p-10 rounded-3xl border-primary/20 bg-primary/5 relative group overflow-hidden flex flex-col h-full"
+            >
+              <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
+
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-8 border border-primary/30">
+                <Code2 className="w-8 h-8 text-primary" />
+              </div>
+
+              <h2 className="font-display text-4xl font-bold text-white mb-4">Development</h2>
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                IIT Student-led AI Development Services providing custom models, calling agents, and automated workflows.
+              </p>
+
+              <div className="space-y-4 mb-10 flex-grow">
+                <div className="flex items-center gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  IIT-made AI Tools & Skills for Enterprises
                 </div>
-              </motion.div>
-            ))}
+                <div className="flex items-center gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                  Fully Custom Contract Development
+                </div>
+              </div>
+
+              <Link href="/products" className="mt-auto inline-block w-full">
+                <div className="w-full py-4 rounded-xl border border-primary/30 bg-primary/10 text-primary font-bold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2">
+                  Explore AI Tools <ArrowRight className="w-5 h-5" />
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Pillar 2: Recruitment */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="glass-panel p-10 rounded-3xl border-secondary/20 bg-secondary/5 relative group overflow-hidden flex flex-col h-full"
+            >
+              <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
+
+              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-8 border border-secondary/30">
+                <Users2 className="w-8 h-8 text-secondary" />
+              </div>
+
+              <h2 className="font-display text-4xl font-bold text-white mb-4">Recruiting</h2>
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                Connecting top-tier IIT talent with global enterprises for high-impact AI internships and full-time roles.
+              </p>
+
+              <div className="space-y-4 mb-10 border-b border-white/10 pb-8 flex-grow">
+                <div className="flex items-center gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                  Elite IIT Students Pool
+                </div>
+                <div className="flex items-center gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
+                  Enterprise Internship Support Program
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 mt-auto">
+                <Link href="/students" className="w-full">
+                  <div className="w-full py-4 px-2 rounded-xl border border-secondary/30 bg-secondary/10 text-secondary font-bold text-center hover:bg-secondary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <GraduationCap className="w-4 h-4 hidden sm:block" /> For Students
+                  </div>
+                </Link>
+                <Link href="/sponsors" className="w-full">
+                  <div className="w-full py-4 px-2 rounded-xl border border-accent/30 bg-accent/10 text-accent font-bold text-center hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+                    <Building2 className="w-4 h-4 hidden sm:block" /> For Sponsors
+                  </div>
+                </Link>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to upgrade your workflow?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-10">
-            Explore our core capabilities from AI Calling Agents to Cloud Deployment.
+      {/* Connection / Synergy Section */}
+      <section className="py-24 relative overflow-hidden text-center">
+        <div className="max-w-3xl mx-auto px-4 relative z-10">
+          <h3 className="font-display text-3xl font-bold text-white mb-6">
+            The IIT AI Synergy
+          </h3>
+          <p className="text-lg text-muted-foreground">
+            Development and Recruiting are profoundly interconnected. Student skill advancement directly fuels rapid, high-quality development for our clients, while enterprise projects provide unparalleled real-world experience for our talent pool.
           </p>
-          <Link href="/products">
-            <ButtonGlow size="xl" className="shadow-[0_0_40px_hsl(var(--primary)/0.3)]" data-testid="button-cta-explore">
-              Explore Our Products
-            </ButtonGlow>
-          </Link>
         </div>
       </section>
-
     </MainLayout>
   );
 }

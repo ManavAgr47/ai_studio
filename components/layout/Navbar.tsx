@@ -21,6 +21,8 @@ export function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
+    { label: "Students", href: "/students" },
+    { label: "Sponsors", href: "/sponsors" },
     { label: "Pricing", href: "/pricing" },
     { label: "Contact", href: "/contact" },
   ];
