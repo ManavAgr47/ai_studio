@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Users2, Sparkles, Building2, GraduationCap } from "lucide-react";
+import { ArrowRight, Code2, Users2, Sparkles, Building2, GraduationCap, Zap } from "lucide-react";
 import Link from "next/link";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ButtonGlow } from "@/components/ui/ButtonGlow";
@@ -34,13 +34,58 @@ export default function Home() {
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Bridging the gap between cutting-edge AI development and elite IIT talent recruitment.
         </motion.p>
+
+        {/* Engaging Intro Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="w-full max-w-5xl mx-auto text-left"
+        >
+          <div className="relative rounded-[2rem] glass-panel border border-primary/20 p-8 md:p-12 overflow-hidden group hover:border-primary/40 transition-colors duration-500">
+            {/* Ambient background glow */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+
+            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+              <Sparkles className="w-32 h-32 text-primary blur-3xl" />
+            </div>
+
+            <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+              <div className="md:col-span-5 space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 text-sm font-semibold shadow-lg backdrop-blur-md">
+                  <Zap className="w-4 h-4 text-primary" />
+                  At a Glance
+                </div>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight">
+                  Pioneering <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">AI Innovation</span> & Talent
+                </h2>
+              </div>
+
+              <div className="md:col-span-7 md:pl-8 md:border-l border-white/10 space-y-6">
+                <p className="text-lg text-white/80 leading-relaxed font-light">
+                  We provide IIT student-led <strong className="text-white font-medium">AI Development Services</strong> providing custom models, calling agents, and automated workflows, alongside <strong className="text-white font-medium">elite recruiting</strong> connecting top-tier IIT students with global enterprises for high-impact AI internships.
+                </p>
+                <div className="flex flex-wrap gap-6 pt-2">
+                  <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-xl border border-white/5">
+                    <Code2 className="w-5 h-5 text-primary" />
+                    <span className="text-sm font-medium text-white/90">Development</span>
+                  </div>
+                  <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-xl border border-white/5">
+                    <Users2 className="w-5 h-5 text-secondary" />
+                    <span className="text-sm font-medium text-white/90">Recruiting</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Two Pillars Section */}
@@ -52,7 +97,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="glass-panel p-10 rounded-3xl border-primary/20 bg-primary/5 relative group overflow-hidden flex flex-col h-full"
             >
               <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
@@ -88,7 +133,7 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
               className="glass-panel p-10 rounded-3xl border-secondary/20 bg-secondary/5 relative group overflow-hidden flex flex-col h-full"
             >
               <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
