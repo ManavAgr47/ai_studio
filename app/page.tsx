@@ -34,54 +34,38 @@ export default function Home() {
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Bridging the gap between cutting-edge AI development and elite IIT talent recruitment.
+          We provide IIT student-led AI Development Services providing custom models, calling agents, and automated workflows, alongside elite recruiting connecting top-tier IIT students with global enterprises for high-impact AI internships.
         </motion.p>
 
-        {/* Engaging Intro Section */}
+        {/* AI Grant Section */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-full max-w-5xl mx-auto text-left"
+          className="w-full max-w-4xl mx-auto text-left"
         >
-          <div className="relative rounded-[2rem] glass-panel border border-primary/20 p-8 md:p-12 overflow-hidden group hover:border-primary/40 transition-colors duration-500">
-            {/* Ambient background glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+          <div className="relative rounded-3xl glass-panel border border-primary/20 p-8 md:p-10 overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-50 transition-opacity duration-700" />
 
-            <div className="absolute top-0 right-0 p-8 opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-              <Sparkles className="w-32 h-32 text-primary blur-3xl" />
-            </div>
+            <div className="relative z-10 flex flex-col items-start gap-4">
+              <h3 className="text-2xl md:text-3xl font-display font-bold text-white flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-primary" />
+                AI Grant
+              </h3>
 
-            <div className="relative z-10 grid md:grid-cols-12 gap-8 items-center">
-              <div className="md:col-span-5 space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 text-sm font-semibold shadow-lg backdrop-blur-md">
-                  <Zap className="w-4 h-4 text-primary" />
-                  At a Glance
-                </div>
-                <h2 className="text-3xl md:text-4xl font-display font-bold text-white leading-tight">
-                  Pioneering <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">AI Innovation</span> & Talent
-                </h2>
-              </div>
+              <p className="text-lg text-white/80 leading-relaxed font-light mb-2">
+                We provide high-performance paid AI tools to university students who need them. We share practical knowledge on AI usage and AI development. Through these efforts, we help students improve their AI skills and capabilities. We will start with IIT students in India.
+              </p>
 
-              <div className="md:col-span-7 md:pl-8 md:border-l border-white/10 space-y-6">
-                <p className="text-lg text-white/80 leading-relaxed font-light">
-                  We provide IIT student-led <strong className="text-white font-medium">AI Development Services</strong> providing custom models, calling agents, and automated workflows, alongside <strong className="text-white font-medium">elite recruiting</strong> connecting top-tier IIT students with global enterprises for high-impact AI internships.
-                </p>
-                <div className="flex flex-wrap gap-6 pt-2">
-                  <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-xl border border-white/5">
-                    <Code2 className="w-5 h-5 text-primary" />
-                    <span className="text-sm font-medium text-white/90">Development</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-xl border border-white/5">
-                    <Users2 className="w-5 h-5 text-secondary" />
-                    <span className="text-sm font-medium text-white/90">Recruiting</span>
-                  </div>
-                </div>
+              <div className="flex w-full border-t border-white/10 pt-6 mt-2 items-center justify-center">
+                <Link href="/contact" className="font-medium text-primary hover:text-white transition-colors flex items-center gap-2">
+                  AI Grant Request <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>
