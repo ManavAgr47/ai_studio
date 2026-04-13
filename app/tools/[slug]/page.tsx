@@ -68,7 +68,7 @@ export default function ToolDetail() {
         <div className="flex-1 flex flex-col items-center justify-center py-20 px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Tool Not Found</h2>
           <p className="text-muted-foreground mb-8">The requested module could not be located in our registry.</p>
-          <Link href="/products">
+          <Link href="/ai-development">
             <ButtonGlow variant="outline">
               <ArrowLeft className="w-4 h-4 mr-2" /> Back to Products
             </ButtonGlow>
@@ -174,7 +174,7 @@ export default function ToolDetail() {
     <MainLayout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 w-full">
 
-        <Link href="/products" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
+        <Link href="/ai-development" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary transition-colors mb-12">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Products
         </Link>

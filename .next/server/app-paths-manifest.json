@@ -1,8 +1,7 @@
 {
-  "/students/page": "app/students/page.js",
-  "/sponsors/page": "app/sponsors/page.js",
-  "/contact/page": "app/contact/page.js",
   "/page": "app/page.js",
-  "/products/page": "app/products/page.js",
-  "/pricing/page": "app/pricing/page.js"
+  "/sponsors/page": "app/sponsors/page.js",
+  "/ai-development/page": "app/ai-development/page.js",
+  "/internships/page": "app/internships/page.js",
+  "/contact/page": "app/contact/page.js"
 }

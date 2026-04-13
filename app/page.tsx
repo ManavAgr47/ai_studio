@@ -39,7 +39,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          We provide IIT student-led AI Development Services providing custom models, calling agents, and automated workflows, alongside elite recruiting connecting top-tier IIT students with global enterprises for high-impact AI internships.
+          We are currently in the midst of an AI revolution. However, many students are unable to utilize AI for learning and research due to its high cost. We will create a platform where students can excel and thrive by leveraging AI. We will build the &quot;roads&quot; (AI Highway), and students, as &quot;vehicles&quot;, will freely travel along them.
         </motion.p>
 
         {/* AI Grant Section */}
@@ -58,9 +58,17 @@ export default function Home() {
                 AI Grant
               </h3>
 
-              <p className="text-lg text-white/80 leading-relaxed font-light mb-2">
-                We provide high-performance paid AI tools to university students who need them. We share practical knowledge on AI usage and AI development. Through these efforts, we help students improve their AI skills and capabilities. We will start with IIT students in India.
-              </p>
+              <div className="space-y-4 text-lg text-white/80 leading-relaxed font-light mb-2">
+                <p>
+                  Starting with the Indian Institutes of Technology (IIT), we provide a premium AI utilization environment free of charge. By offering high-quality, paid AI tools, we help students dramatically improve their learning and research.
+                </p>
+                <p>
+                  <strong className="text-white font-medium">Skill Learning:</strong> We focus on enhancing AI utilization and development skills, including CloudCode and Slack integration.
+                </p>
+                <p>
+                  <strong className="text-white font-medium">Global Expansion:</strong> Our vision is to expand our platform from India to emerging countries around the world.
+                </p>
+              </div>
 
               <div className="flex w-full border-t border-white/10 pt-6 mt-2 items-center justify-center">
                 <Link href="/contact" className="font-medium text-primary hover:text-white transition-colors flex items-center gap-2">
@@ -77,7 +85,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 
-            {/* Pillar 1: Development */}
+            {/* Pillar 1: Internship Matching */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -87,64 +95,32 @@ export default function Home() {
               <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
 
               <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center mb-8 border border-primary/30">
-                <Code2 className="w-8 h-8 text-primary" />
+                <Users2 className="w-8 h-8 text-primary" />
               </div>
 
-              <h2 className="font-display text-4xl font-bold text-white mb-4">Development</h2>
+              <h2 className="font-display text-4xl font-bold text-white mb-4">Internship Matching</h2>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                IIT Student-led AI Development Services providing custom models, calling agents, and automated workflows.
-              </p>
-
-              <div className="space-y-4 mb-10 flex-grow">
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  IIT-made AI Tools & Skills for Enterprises
-                </div>
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  Fully Custom Contract Development
-                </div>
-              </div>
-
-              <Link href="/products" className="mt-auto inline-block w-full">
-                <div className="w-full py-4 rounded-xl border border-primary/30 bg-primary/10 text-primary font-bold text-center hover:bg-primary hover:text-primary-foreground transition-all duration-300 flex items-center justify-center gap-2">
-                  Explore AI Tools <ArrowRight className="w-5 h-5" />
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* Pillar 2: Recruitment */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="glass-panel p-10 rounded-3xl border-secondary/20 bg-secondary/5 relative group overflow-hidden flex flex-col h-full"
-            >
-              <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
-
-              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-8 border border-secondary/30">
-                <Users2 className="w-8 h-8 text-secondary" />
-              </div>
-
-              <h2 className="font-display text-4xl font-bold text-white mb-4">Recruiting</h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Connecting top-tier IIT talent with global enterprises for high-impact AI internships and full-time roles.
+                We match top university students from around the world possessing advanced AI skills with companies seeking elite interns.
               </p>
 
               <div className="space-y-4 mb-10 border-b border-white/10 pb-8 flex-grow">
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                  Elite IIT Students Pool
+                <div className="flex items-start gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Top university students worldwide with practical AI skills
                 </div>
-                <div className="flex items-center gap-3 text-white/80">
-                  <div className="w-1.5 h-1.5 rounded-full bg-secondary" />
-                  Enterprise Internship Support Program
+                <div className="flex items-start gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Priority referral to AI Grant sponsoring companies
+                </div>
+                <div className="flex items-start gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  Sponsorship fee: $100 / month (6-month contract)
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 mt-auto">
-                <Link href="/students" className="w-full">
-                  <div className="w-full py-4 px-2 rounded-xl border border-secondary/30 bg-secondary/10 text-secondary font-bold text-center hover:bg-secondary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
+                <Link href="/internships" className="w-full">
+                  <div className="w-full py-4 px-2 rounded-xl border border-primary/30 bg-primary/10 text-primary font-bold text-center hover:bg-primary hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
                     <GraduationCap className="w-4 h-4 hidden sm:block" /> For Students
                   </div>
                 </Link>
@@ -154,6 +130,48 @@ export default function Home() {
                   </div>
                 </Link>
               </div>
+            </motion.div>
+
+            {/* Pillar 2: AI Development */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="glass-panel p-10 rounded-3xl border-secondary/20 bg-secondary/5 relative group overflow-hidden flex flex-col h-full"
+            >
+              <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl opacity-50 group-hover:opacity-100 transition-opacity" />
+
+              <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center mb-8 border border-secondary/30">
+                <Code2 className="w-8 h-8 text-secondary" />
+              </div>
+
+              <h2 className="font-display text-4xl font-bold text-white mb-4">AI Development</h2>
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                Students earn income through AI contract development, while we also support them in creating innovative tools to thrive in the AI era. These tools act as core revenue sources to sustain our operations.
+              </p>
+
+              <div className="space-y-4 mb-10 flex-grow">
+                <div className="flex items-start gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                  <div>
+                    <strong className="text-white">AI Contract Development</strong><br />
+                    <span className="text-sm">Building AI tools in response to client company requests.</span>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 text-white/80">
+                  <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2 flex-shrink-0" />
+                  <div>
+                    <strong className="text-white">In-house Tool Support</strong><br />
+                    <span className="text-sm">We provide total support for the development and sales of original AI tools.</span>
+                  </div>
+                </div>
+              </div>
+
+              <Link href="/ai-development" className="mt-auto inline-block w-full">
+                <div className="w-full py-4 rounded-xl border border-secondary/30 bg-secondary/10 text-secondary font-bold text-center hover:bg-secondary hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+                  Explore AI Tools <ArrowRight className="w-5 h-5" />
+                </div>
+              </Link>
             </motion.div>
 
           </div>
