@@ -39,7 +39,8 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          We are currently in the midst of an AI revolution. However, many students are unable to utilize AI for learning and research due to its high cost. We will create a platform where students can excel and thrive by leveraging AI. We will build the &quot;roads&quot; (AI Highway), and students, as &quot;vehicles&quot;, will freely travel along them.
+          We&apos;re in an AI revolution, but high costs limit student access.<br />
+          We&apos;re building an AI &quot;highway&quot; where students can learn, build, and thrive freely.
         </motion.p>
 
         {/* AI Grant Section */}
@@ -60,13 +61,13 @@ export default function Home() {
 
               <div className="space-y-4 text-lg text-white/80 leading-relaxed font-light mb-2">
                 <p>
-                  Starting with the Indian Institutes of Technology (IIT), we provide a premium AI utilization environment free of charge. By offering high-quality, paid AI tools, we help students dramatically improve their learning and research.
+                  Free premium AI tools for students, starting with IITs, to boost learning and research.
                 </p>
                 <p>
-                  <strong className="text-white font-medium">Skill Learning:</strong> We focus on enhancing AI utilization and development skills, including CloudCode and Slack integration.
+                  <strong className="text-white font-medium">Skills:</strong> Build AI usage &amp; development skills (CloudCode, Slack, etc.).
                 </p>
                 <p>
-                  <strong className="text-white font-medium">Global Expansion:</strong> Our vision is to expand our platform from India to emerging countries around the world.
+                  <strong className="text-white font-medium">Vision:</strong> Expand from India to emerging markets worldwide.
                 </p>
               </div>
 
@@ -100,7 +101,7 @@ export default function Home() {
 
               <h2 className="font-display text-4xl font-bold text-white mb-4">Internship Matching</h2>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                We match top university students from around the world possessing advanced AI skills with companies seeking elite interns.
+                We connect top AI-skilled students with companies seeking elite interns.
               </p>
 
               <div className="space-y-4 mb-10 border-b border-white/10 pb-8 flex-grow">
@@ -147,7 +148,8 @@ export default function Home() {
 
               <h2 className="font-display text-4xl font-bold text-white mb-4">AI Development</h2>
               <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Students earn income through AI contract development, while we also support them in creating innovative tools to thrive in the AI era. These tools act as core revenue sources to sustain our operations.
+                Students earn through AI contract work while building innovative tools.<br />
+                These tools drive revenue and sustain our ecosystem.
               </p>
 
               <div className="space-y-4 mb-10 flex-grow">
@@ -185,7 +187,8 @@ export default function Home() {
             The IIT AI Synergy
           </h3>
           <p className="text-lg text-muted-foreground">
-            Development and Recruiting are profoundly interconnected. Student skill advancement directly fuels rapid, high-quality development for our clients, while enterprise projects provide unparalleled real-world experience for our talent pool.
+            Development and recruiting are deeply interconnected.<br />
+            Student growth drives better outcomes, while real projects build real skills.
           </p>
         </div>
       </section>

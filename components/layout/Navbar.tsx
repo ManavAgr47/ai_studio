@@ -20,11 +20,11 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "AI Development", href: "/ai-development" },
-    { label: "Internships", href: "/internships" },
-    { label: "Sponsors", href: "/sponsors" },
+    { label: "AI Grant", href: "/ai-development" },
+    { label: "Internship Matching", href: "/internships" },
+    { label: "AI Development", href: "/sponsors" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Contact", href: "/contact" },
+    { label: "Documentation", href: "#" },
   ];
 
   return (
@@ -68,7 +68,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/ai-development"
+              href="/contact"
               className="px-6 py-2.5 rounded-full font-semibold bg-white/5 border border-white/10 text-white hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300"
             >
               Get Started

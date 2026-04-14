@@ -30,8 +30,8 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-8">
-              Pioneering the next generation of artificial intelligence tools.
-              We build systems that elevate human potential and streamline complex workflows.
+              AI Highway for Students<br />
+              We help students around the world leverage AI and expand their potential.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary transition-all duration-300">
@@ -49,9 +49,9 @@ export function Footer() {
           <div>
             <h4 className="font-display font-semibold text-white mb-6">Platform</h4>
             <ul className="space-y-4">
-              <li><Link href="/ai-development" className="text-muted-foreground hover:text-primary transition-colors">AI Development</Link></li>
+              <li><Link href="/sponsors" className="text-muted-foreground hover:text-primary transition-colors">AI Development</Link></li>
               <li><Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</a></li>
+              <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>
             </ul>
           </div>
@@ -60,7 +60,7 @@ export function Footer() {
             <h4 className="font-display font-semibold text-white mb-6">Company</h4>
             <ul className="space-y-4">
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Careers</a></li>
+              <li><Link href="/internships" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
             </ul>
