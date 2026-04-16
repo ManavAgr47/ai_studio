@@ -101,22 +101,53 @@ export default function Contact() {
   return (
     <MainLayout>
       <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <motion.h1
-            className="font-display text-4xl md:text-5xl font-bold text-white mb-6"
+        <div className="max-w-4xl mx-auto mb-16 text-center space-y-8 relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            Connect with <span className="text-primary">IIT AI Studio</span>
-          </motion.h1>
-          <motion.p
-            className="text-lg text-muted-foreground"
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
+              IIT AI Studio <span className="text-primary">AI Grants</span>
+            </h1>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Access to high-quality AI is often limited by cost. We offer AI Grants to provide students with premium AI tools, significantly increasing study and research efficiency to elevate academic excellence.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left mt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            Select your partnership vector below.
-          </motion.p>
+            {/* For Students Box */}
+            <div className="glass-panel p-6 rounded-2xl border-secondary/20 bg-secondary/5 border relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-secondary" />
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <GraduationCap className="w-5 h-5 text-secondary" /> For Students
+              </h3>
+              <ul className="space-y-3 text-white/70 text-sm">
+                <li><strong className="text-white">What We Offer:</strong> $20/month credit for Claude's paid version, plus opportunities to learn AI agent development know-how.</li>
+                <li><strong className="text-white">Eligibility:</strong> Starting with IIT students, and expanding to students from other Indian universities.</li>
+              </ul>
+              <p className="mt-5 text-white font-medium text-sm">IIT Students: Would you like to register with IITAIS?</p>
+            </div>
+
+            {/* For Sponsors Box */}
+            <div className="glass-panel p-6 rounded-2xl border-accent/20 bg-accent/5 border relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-accent" />
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-accent" /> Seeking Sponsors
+              </h3>
+              <p className="text-white/80 text-sm mb-3">
+                Would you like to become a sponsor of the AI Grant?
+              </p>
+              <ul className="space-y-3 text-white/70 text-sm">
+                <li><strong className="text-white">Social Impact:</strong> Contribute to the social significance of providing free AI access to students.</li>
+                <li><strong className="text-white">Recruitment:</strong> Recruit elite students with proven AI skills for internships from participating top universities.</li>
+              </ul>
+            </div>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-8">
