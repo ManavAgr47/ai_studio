@@ -72,7 +72,7 @@ export default function Home() {
               </div>
 
               <div className="flex w-full border-t border-white/10 pt-6 mt-2 items-center justify-center">
-                <Link href="/contact" className="font-medium text-primary hover:text-white transition-colors flex items-center gap-2">
+                <Link href="/ai-grant" className="font-medium text-primary hover:text-white transition-colors flex items-center gap-2">
                   AI Grant Request <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -125,7 +125,7 @@ export default function Home() {
                     <GraduationCap className="w-4 h-4 hidden sm:block" /> For Students
                   </div>
                 </Link>
-                <Link href="/sponsors" className="w-full">
+                <Link href="/contribute" className="w-full">
                   <div className="w-full py-4 px-2 rounded-xl border border-accent/30 bg-accent/10 text-accent font-bold text-center hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
                     <Building2 className="w-4 h-4 hidden sm:block" /> For Sponsors
                   </div>

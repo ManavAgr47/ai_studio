@@ -81,7 +81,7 @@ export default function Sponsors() {
                             </div>
                         </div>
 
-                        <Link href="/contact">
+                        <Link href="/ai-grant">
                             <ButtonGlow className="w-full border-accent text-accent hover:bg-accent hover:text-white bg-transparent">
                                 Become a Sponsor <ArrowRight className="w-4 h-4 ml-2" />
                             </ButtonGlow>

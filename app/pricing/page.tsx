@@ -143,7 +143,7 @@ export default function Pricing() {
               ))}
             </div>
 
-            <Link href="/contact">
+            <Link href="/ai-grant">
               <ButtonGlow size="lg" className="w-full sm:w-auto px-12" data-testid="button-pricing-bundle">
                 Get the Bundle
               </ButtonGlow>

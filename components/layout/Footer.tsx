@@ -49,7 +49,7 @@ export function Footer() {
           <div>
             <h4 className="font-display font-semibold text-white mb-6">Platform</h4>
             <ul className="space-y-4">
-              <li><Link href="/sponsors" className="text-muted-foreground hover:text-primary transition-colors">AI Development</Link></li>
+              <li><Link href="/contribute" className="text-muted-foreground hover:text-primary transition-colors">Contribute</Link></li>
               <li><Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>
@@ -61,7 +61,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">About Us</a></li>
               <li><Link href="/internships" className="text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/ai-grant" className="text-muted-foreground hover:text-primary transition-colors">AI Grant</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
             </ul>
           </div>

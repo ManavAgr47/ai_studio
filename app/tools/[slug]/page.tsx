@@ -225,7 +225,7 @@ export default function ToolDetail() {
               <ButtonGlow size="lg" className="w-full sm:w-auto" data-testid="button-tool-cta">
                 {ctaText}
               </ButtonGlow>
-              <Link href="/contact">
+              <Link href="/ai-grant">
                 <ButtonGlow variant="outline" size="lg" className="w-full sm:w-auto" data-testid="button-tool-contact">
                   Talk to a Specialist
                 </ButtonGlow>

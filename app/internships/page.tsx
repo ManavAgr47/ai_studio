@@ -74,7 +74,7 @@ export default function Internships() {
                         <p className="text-muted-foreground leading-relaxed mb-8">
                             As part of the IIT Students Pool, you directly benefit from our recruiting synergy. You'll be introduced to Client Enterprises and SMEs through our Enterprise Internship Support Program, gaining vital industry experience while contributing to high-impact projects.
                         </p>
-                        <Link href="/contact">
+                        <Link href="/ai-grant">
                             <ButtonGlow className="w-full border-secondary text-secondary hover:bg-secondary hover:text-white bg-transparent">
                                 Join the Talent Pool
                             </ButtonGlow>
