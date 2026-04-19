@@ -20,8 +20,8 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "AI Development", href: "/ai-development" },
     { label: "Internship Matching", href: "/internships" },
+    { label: "AI Development", href: "/ai-development" },
     { label: "Contribute", href: "/contribute" },
     { label: "Pricing", href: "/pricing" },
     { label: "Documentation", href: "#" },

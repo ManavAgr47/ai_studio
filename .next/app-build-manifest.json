@@ -16,35 +16,35 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/ai-development/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/ai-development/page.js"
-    ],
     "/internships/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/internships/page.js"
     ],
-    "/_not-found/page": [
+    "/ai-development/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/ai-development/page.js"
+    ],
+    "/tools/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tools/[slug]/page.js"
     ],
     "/contribute/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/contribute/page.js"
     ],
-    "/pricing/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/pricing/page.js"
-    ],
     "/ai-grant/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/ai-grant/page.js"
+    ],
+    "/pricing/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pricing/page.js"
     ]
   }
 }
