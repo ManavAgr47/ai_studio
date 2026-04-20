@@ -26,7 +26,7 @@ export function Footer() {
                 <Cpu className="w-5 h-5 text-primary" />
               </div>
               <span className="font-display font-bold text-xl tracking-wide text-foreground">
-                IIT <span className="text-primary">AI Studio</span>
+                IIT <span className="text-primary">AI</span> Studio
               </span>
             </Link>
             <p className="text-muted-foreground max-w-sm mb-8">
@@ -49,7 +49,7 @@ export function Footer() {
           <div>
             <h4 className="font-display font-semibold text-white mb-6">Platform</h4>
             <ul className="space-y-4">
-              <li><Link href="/contribute" className="text-muted-foreground hover:text-primary transition-colors">Contribute</Link></li>
+              <li><Link href="/contribute" className="text-muted-foreground hover:text-primary transition-colors">Student Access</Link></li>
               <li><Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>

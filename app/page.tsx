@@ -127,7 +127,7 @@ export default function Home() {
                 </Link>
                 <Link href="/contribute" className="w-full">
                   <div className="w-full py-4 px-2 rounded-xl border border-accent/30 bg-accent/10 text-accent font-bold text-center hover:bg-accent hover:text-white transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base">
-                    <Building2 className="w-4 h-4 hidden sm:block" /> For Sponsors
+                    <GraduationCap className="w-4 h-4 hidden sm:block" /> Student Access
                   </div>
                 </Link>
               </div>

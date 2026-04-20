@@ -1,11 +1,11 @@
 "use client";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { motion } from "framer-motion";
-import { ArrowRight, Building2, Globe2 } from "lucide-react";
+import { ArrowRight, GraduationCap, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { ButtonGlow } from "@/components/ui/ButtonGlow";
 
-export default function Sponsors() {
+export default function ContributePage() {
     return (
         <MainLayout>
             <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative">
@@ -16,8 +16,8 @@ export default function Sponsors() {
                         transition={{ duration: 0.6 }}
                         className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent text-sm font-medium mb-8 border border-accent/20 bg-accent/5"
                     >
-                        <Building2 className="w-4 h-4" />
-                        <span>Partnership Pillar</span>
+                        <GraduationCap className="w-4 h-4" />
+                        <span>Student Support</span>
                     </motion.div>
                     <motion.h1
                         className="font-display text-4xl md:text-6xl font-bold text-white mb-6"
@@ -25,65 +25,84 @@ export default function Sponsors() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        For <span className="text-glow-accent text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Sponsors</span>
+                        <span className="text-glow-accent text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Student Access</span>
                     </motion.h1>
+                    <motion.h2
+                        className="text-2xl text-white mt-4 font-semibold"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.05 }}
+                    >
+                        Premium AI, Without the Cost Barrier
+                    </motion.h2>
                     <motion.p
                         className="text-lg text-muted-foreground mt-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
                     >
-                        Invest in the next generation of AI innovation. Gain direct access to elite IIT talent and custom-built enterprise AI solutions.
+                        Many students want to use advanced AI for study, research, and creation. The problem is simple: the best tools often cost too much. IIT AI Studio gives selected IIT students free access to premium AI models, removing the barrier to innovation.
                     </motion.p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    {/* Left Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="glass-panel p-8 rounded-3xl border-white/10"
+                        className="glass-panel p-8 rounded-3xl border-white/10 flex flex-col"
                     >
-                        <h3 className="font-display text-2xl font-bold text-white mb-4">About IIT AI Studio</h3>
+                        <h3 className="font-display text-2xl font-bold text-white mb-4">What We Offer</h3>
                         <p className="text-muted-foreground leading-relaxed mb-6">
-                            IIT AI Studio operates on Dual Business Pillars: Recruiting and Development. We orchestrate a powerful synergy where rigorous AI development naturally fuels an elite talent pool. Our students build high-value production systems, ensuring they are instantly effective in enterprise environments.
+                            The following will be provided free of charge to those selected. We offer paid versions of major AI models to support your academic and creative goals.
                         </p>
-                        <ul className="space-y-3 mb-8">
-                            <li className="flex items-center gap-3 text-white/80">
-                                <div className="w-1.5 h-1.5 rounded-full bg-accent" /> Student-led AI Development Services
+                        <div className="mb-4 text-white font-medium">Choose one of the following:</div>
+                        <ul className="space-y-4 mb-8">
+                            <li className="flex items-center gap-3 text-white/80 p-3 bg-white/5 rounded-xl border border-white/10">
+                                <CheckCircle2 className="w-5 h-5 text-accent" />
+                                <span><strong>Claude Pro</strong> &ndash; $20 / month</span>
                             </li>
-                            <li className="flex items-center gap-3 text-white/80">
-                                <div className="w-1.5 h-1.5 rounded-full bg-accent" /> Fully Custom Contract Development
+                            <li className="flex items-center gap-3 text-white/80 p-3 bg-white/5 rounded-xl border border-white/10">
+                                <CheckCircle2 className="w-5 h-5 text-accent" />
+                                <span><strong>ChatGPT Plus</strong> &ndash; $20 / month</span>
+                            </li>
+                            <li className="flex items-center gap-3 text-white/80 p-3 bg-white/5 rounded-xl border border-white/10">
+                                <CheckCircle2 className="w-5 h-5 text-accent" />
+                                <span><strong>Gemini Advanced</strong> &ndash; $20 / month</span>
                             </li>
                         </ul>
                     </motion.div>
 
+                    {/* Right Card */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="glass-panel p-8 rounded-3xl border-accent/30 relative overflow-hidden"
+                        className="glass-panel p-8 rounded-3xl border-accent/30 relative overflow-hidden flex flex-col"
                     >
                         <div className="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
-                        <h3 className="font-display text-2xl font-bold text-white mb-4">Why Invest & Partner?</h3>
+                        <h3 className="font-display text-2xl font-bold text-white mb-4">Selection Process</h3>
                         <p className="text-muted-foreground leading-relaxed mb-6">
-                            By sponsoring or contracting with IIT AI Studio, your enterprise reaps dual benefits: acquiring cutting-edge AI tools tailor-made for your operations, and securing an exclusive pipeline to pre-vetted, highly skilled IIT engineering interns.
+                            Please fill out the application form below to apply. Be prepared to share details about how you plan to use AI in your studies or projects.
                         </p>
 
-                        <div className="grid grid-cols-2 gap-4 mb-8">
+                        <div className="space-y-4 text-sm text-white/80 mb-8 flex-1">
                             <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                                <div className="text-sm font-semibold text-white mb-1 tracking-wide">Enterprise Program</div>
-                                <div className="text-lg font-display text-accent">$100/month Per Student.</div>
+                                <div className="font-semibold text-white mb-2">Application Details Required:</div>
+                                <ul className="list-disc list-inside space-y-1 text-muted-foreground">
+                                    <li>Basic info (Name, School, Dept, Year)</li>
+                                    <li>What you want to do with AI</li>
+                                    <li>Resume / CV upload</li>
+                                    <li>Desired AI project or goals</li>
+                                </ul>
                             </div>
-                            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                                <div className="text-sm font-semibold text-white mb-1 tracking-wide">Market Reach</div>
-                                <div className="text-sm font-display text-accent flex items-center gap-1.5"><Globe2 className="w-4 h-4" /> Global & Indian</div>
-                            </div>
+                            <p className="italic text-accent mt-4">We will contact you with the results of the review via email.</p>
                         </div>
 
-                        <Link href="/ai-grant">
+                        <Link href="/ai-grant" className="mt-auto">
                             <ButtonGlow className="w-full border-accent text-accent hover:bg-accent hover:text-white bg-transparent">
-                                Become a Sponsor <ArrowRight className="w-4 h-4 ml-2" />
+                                Application Form <ArrowRight className="w-4 h-4 ml-2" />
                             </ButtonGlow>
                         </Link>
                     </motion.div>

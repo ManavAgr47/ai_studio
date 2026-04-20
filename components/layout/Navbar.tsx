@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Cpu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -20,11 +20,13 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Home", href: "/" },
+    { label: "AI Grant", href: "/ai-grant" },
+    { label: "Student Access", href: "/contribute" },
     { label: "Internship Matching", href: "/internships" },
     { label: "AI Development", href: "/ai-development" },
-    { label: "Contribute", href: "/contribute" },
     { label: "Pricing", href: "/pricing" },
     { label: "Documentation", href: "#" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -41,9 +43,9 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <img
-              src={logoPngPath}
-              alt="IIT AI Studio"
-              className="h-12 w-auto object-contain brightness-0 invert"
+              src="/new-logo.png"
+              alt="IIT AI Studio Logo"
+              className="h-14 w-auto object-contain mix-blend-screen contrast-125 saturate-150 brightness-110 hover:opacity-80 transition-opacity"
             />
           </Link>
 
@@ -67,12 +69,6 @@ export function Navbar() {
                 )}
               </Link>
             ))}
-            <Link
-              href="/ai-grant"
-              className="px-6 py-2.5 rounded-full font-semibold bg-white/5 border border-white/10 text-white hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-all duration-300"
-            >
-              AI Grant
-            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
