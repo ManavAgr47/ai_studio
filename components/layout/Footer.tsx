@@ -21,13 +21,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 border border-primary/50 flex items-center justify-center">
-                <Cpu className="w-5 h-5 text-primary" />
-              </div>
-              <span className="font-display font-bold text-xl tracking-wide text-foreground">
-                IIT <span className="text-primary">AI</span> Studio
-              </span>
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <img
+                src="/new-logo.png"
+                alt="IIT AI Studio Logo"
+                className="h-16 md:h-24 w-auto object-contain mix-blend-screen contrast-125 saturate-150 brightness-110 hover:opacity-80 transition-opacity"
+              />
             </Link>
             <p className="text-muted-foreground max-w-sm mb-8">
               AI Highway for Students<br />
