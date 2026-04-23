@@ -23,6 +23,12 @@ export const contactMessages = pgTable("contact_messages", {
   college: text("college"),
   resumeLink: text("resume_link"),
   companyName: text("company_name"),
+  yearOfStudy: text("year_of_study"),
+  major: text("major"),
+  preferredModel: text("preferred_model"),
+  industry: text("industry"),
+  companySize: text("company_size"),
+  sponsorshipGoal: text("sponsorship_goal"),
 });
 
 export const insertToolSchema = createInsertSchema(tools).omit({ id: true });

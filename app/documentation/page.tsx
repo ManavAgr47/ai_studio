@@ -1,173 +1,104 @@
 "use client";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { motion } from "framer-motion";
-import { Building2, Target, Users, Landmark, MapPin, Phone } from "lucide-react";
 
-export default function Documentation() {
-    const staggerContainer = {
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariant = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-    };
-
+export default function CompanyOutline() {
     return (
         <MainLayout>
-            <div className="pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full relative min-h-screen">
-                {/* Glow backdrop */}
-                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-medium mb-6"
-                    >
-                        <Building2 className="w-4 h-4" />
-                        Documentation & Info
-                    </motion.div>
-                    <motion.h1
-                        className="font-display text-4xl md:text-6xl font-bold text-white mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                        <span className="text-glow-secondary text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary">Company Outline</span>
-                    </motion.h1>
-                </div>
-
+            <div className="pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full min-h-screen">
                 <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="show"
-                    className="space-y-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
                 >
-                    {/* Core Info */}
-                    <motion.div variants={itemVariant} className="glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] -z-10 rounded-full" />
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-                            <div>
-                                <h2 className="text-2xl font-display font-bold text-white mb-1">IIT AI STUDIO</h2>
-                                <p className="text-muted-foreground flex items-center gap-2">
-                                    <Building2 className="w-4 h-4" />
-                                    Established in 2026
+                    <div className="mb-16 text-center md:text-left">
+                        <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 md:mb-0">
+                            Company Outline
+                        </h1>
+                    </div>
+
+                    <div className="glass-panel p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden bg-background/50 shadow-2xl backdrop-blur-xl">
+                        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-x-12 gap-y-12">
+
+                            {/* Name */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Name
+                            </div>
+                            <div className="text-white text-lg font-semibold">
+                                IIT AI STUDIO
+                            </div>
+
+                            {/* Year established */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Year Established
+                            </div>
+                            <div className="text-white text-lg">
+                                2026
+                            </div>
+
+                            {/* Vision */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Our Vision
+                            </div>
+                            <div className="text-white text-lg leading-relaxed">
+                                <p className="text-primary mb-4 font-semibold text-xl">An AI Runway for Students Worldwide</p>
+                                <p className="mb-6 text-white/90">
+                                    We are building an ecosystem that democratizes access to artificial intelligence, empowering students to drive research innovation and unlock scalable business opportunities. To achieve this, we commit to:
                                 </p>
+                                <ol className="list-decimal pl-5 space-y-3 text-white/80">
+                                    <li><strong className="text-white">Access & Training:</strong> Providing Indian university students with free access to premium AI tools and hands-on guidance.</li>
+                                    <li><strong className="text-white">Empowerment:</strong> Creating tangible earning opportunities for students utilizing their expanding AI capabilities.</li>
+                                    <li><strong className="text-white">Placement:</strong> Bridging the gap between elite AI-skilled talent and top Indian companies by facilitating direct employment paths.</li>
+                                </ol>
                             </div>
+
+                            {/* Team */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Founding Team
+                            </div>
+                            <div className="text-white text-lg space-y-6">
+                                <div>
+                                    <p className="text-primary/70 text-sm font-medium uppercase tracking-wider mb-1">Founder & CEO</p>
+                                    <p className="font-semibold">Hardik Advani</p>
+                                </div>
+                                <div>
+                                    <p className="text-primary/70 text-sm font-medium uppercase tracking-wider mb-1">Co-Founders</p>
+                                    <p className="font-semibold">Manav Agrawal</p>
+                                    <p className="font-semibold mt-1">Karan Kaurav</p>
+                                </div>
+                            </div>
+
+                            {/* Shareholders */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Shareholders
+                            </div>
+                            <div className="text-white text-lg space-y-4">
+                                <div>
+                                    <p className="font-semibold">Murata Dai</p>
+                                    <p className="text-sm text-white/60">Seed Investor from Japan</p>
+                                </div>
+                                <p className="font-semibold pt-1">Founders</p>
+                            </div>
+
+                            {/* Address */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Address
+                            </div>
+                            <div className="text-white text-lg text-white/90">
+                                ask Mains
+                            </div>
+
+                            {/* Contact */}
+                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                                Contact
+                            </div>
+                            <div className="text-white text-lg text-white/90">
+                                ask Mains
+                            </div>
+
                         </div>
-                    </motion.div>
-
-                    {/* Vision */}
-                    <motion.div variants={itemVariant} className="glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
-                                <Target className="w-5 h-5" />
-                            </div>
-                            <h2 className="text-2xl font-display font-bold text-white">Our Vision</h2>
-                        </div>
-
-                        <div className="prose prose-invert max-w-none">
-                            <p className="text-xl text-white/90 leading-relaxed font-medium mb-6">
-                                An <span className="text-primary">AI runway</span> for students worldwide.
-                            </p>
-                            <p className="text-muted-foreground mb-8 leading-relaxed">
-                                We’re building a launchpad where students don’t just learn AI — they use it to create, earn, and grow. From first exposure to real-world impact, the runway is designed to turn curiosity into capability.
-                            </p>
-
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {/* points */}
-                                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
-                                    <div className="text-primary text-xl font-bold mb-3">01</div>
-                                    <p className="text-sm text-white/80">Give students free access to powerful AI tools and hands-on learning.</p>
-                                </div>
-                                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
-                                    <div className="text-primary text-xl font-bold mb-3">02</div>
-                                    <p className="text-sm text-white/80">Enable them to turn skills into real income and opportunities.</p>
-                                </div>
-                                <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-primary/30 transition-colors">
-                                    <div className="text-primary text-xl font-bold mb-3">03</div>
-                                    <p className="text-sm text-white/80">Bridge talent with top companies, unlocking meaningful careers.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Grid for remaining items */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <motion.div variants={itemVariant} className="glass-panel p-8 rounded-3xl border border-white/10">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary">
-                                    <Users className="w-5 h-5" />
-                                </div>
-                                <h2 className="text-xl font-display font-bold text-white">Founders</h2>
-                            </div>
-                            <ul className="space-y-4">
-                                <li className="flex flex-col">
-                                    <span className="text-sm text-muted-foreground">Founder & CEO</span>
-                                    <span className="text-lg text-white font-medium">Hardik Advani</span>
-                                </li>
-                                <li className="flex flex-col">
-                                    <span className="text-sm text-muted-foreground">Co-Founders</span>
-                                    <span className="text-lg text-white font-medium">Manav Agrawal</span>
-                                    <span className="text-lg text-white font-medium">Karan Kaurav</span>
-                                </li>
-                            </ul>
-                        </motion.div>
-
-                        <motion.div variants={itemVariant} className="glass-panel p-8 rounded-3xl border border-white/10">
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
-                                    <Landmark className="w-5 h-5" />
-                                </div>
-                                <h2 className="text-xl font-display font-bold text-white">Shareholders</h2>
-                            </div>
-                            <ul className="space-y-4">
-                                <li className="flex flex-col">
-                                    <span className="text-sm text-muted-foreground">Seed Investor</span>
-                                    <span className="text-lg text-white font-medium">Murata Dai <span className="text-sm text-muted-foreground">(from Japan)</span></span>
-                                </li>
-                                <li className="flex flex-col">
-                                    <span className="text-sm text-muted-foreground">Shareholders</span>
-                                    <span className="text-lg text-white font-medium">Hardik Advani</span>
-                                    <span className="text-lg text-white font-medium">Manav Agrawal</span>
-                                    <span className="text-lg text-white font-medium">Karan Kaurav</span>
-                                </li>
-                            </ul>
-                        </motion.div>
-
-                        <motion.div variants={itemVariant} className="glass-panel p-8 rounded-3xl border border-white/10 md:col-span-2">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/70 shrink-0 mt-1">
-                                        <MapPin className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-sm text-muted-foreground mb-1">Address</h3>
-                                        <p className="text-white text-lg">ask Mains</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white/70 shrink-0 mt-1">
-                                        <Phone className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-sm text-muted-foreground mb-1">Contact</h3>
-                                        <p className="text-white text-lg">ask Mains</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
                     </div>
                 </motion.div>
-
             </div>
         </MainLayout>
     );

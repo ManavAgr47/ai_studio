@@ -1,9 +1,9 @@
 {
-  "/page": "app/page.js",
-  "/documentation/page": "app/documentation/page.js",
-  "/pricing/page": "app/pricing/page.js",
-  "/ai-development/page": "app/ai-development/page.js",
-  "/contribute/page": "app/contribute/page.js",
   "/ai-grant/page": "app/ai-grant/page.js",
-  "/internships/page": "app/internships/page.js"
+  "/contribute/page": "app/contribute/page.js",
+  "/internships/page": "app/internships/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/documentation/page": "app/documentation/page.js",
+  "/ai-development/page": "app/ai-development/page.js",
+  "/page": "app/page.js"
 }

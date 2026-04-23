@@ -25,7 +25,7 @@ export function Navbar() {
     { label: "Internship Matching", href: "/internships" },
     { label: "AI Development", href: "/ai-development" },
     { label: "Pricing", href: "/pricing" },
-    { label: "Documentation", href: "/documentation" },
+    { label: "Company Outline", href: "/documentation" },
     { label: "Contact Us", href: "/contact" },
   ];
 
@@ -45,7 +45,7 @@ export function Navbar() {
             <img
               src="/new-logo.png"
               alt="IIT AI Studio Logo"
-              className="h-16 md:h-24 w-auto object-contain mix-blend-screen contrast-125 saturate-150 brightness-110 hover:opacity-80 transition-opacity"
+              className="h-10 md:h-14 w-auto object-contain mix-blend-screen contrast-125 saturate-150 brightness-110 hover:opacity-80 transition-opacity"
             />
           </Link>
 

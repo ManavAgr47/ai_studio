@@ -25,7 +25,7 @@ export function Footer() {
               <img
                 src="/new-logo.png"
                 alt="IIT AI Studio Logo"
-                className="h-16 md:h-24 w-auto object-contain mix-blend-screen contrast-125 saturate-150 brightness-110 hover:opacity-80 transition-opacity"
+                className="h-10 md:h-14 w-auto object-contain mix-blend-screen contrast-125 saturate-150 brightness-110 hover:opacity-80 transition-opacity"
               />
             </Link>
             <p className="text-muted-foreground max-w-sm mb-8">
@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li><Link href="/contribute" className="text-muted-foreground hover:text-primary transition-colors">Student Access</Link></li>
               <li><Link href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors">Documentation</Link></li>
+              <li><Link href="/documentation" className="text-muted-foreground hover:text-primary transition-colors">Company Outline</Link></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">API Reference</a></li>
             </ul>
           </div>

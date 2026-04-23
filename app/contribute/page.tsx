@@ -100,7 +100,7 @@ export default function ContributePage() {
                             <p className="italic text-accent mt-4">We will contact you with the results of the review via email.</p>
                         </div>
 
-                        <Link href="/ai-grant" className="mt-auto">
+                        <Link href="/contribute/apply" className="mt-auto">
                             <ButtonGlow className="w-full border-accent text-accent hover:bg-accent hover:text-white bg-transparent">
                                 Application Form <ArrowRight className="w-4 h-4 ml-2" />
                             </ButtonGlow>
