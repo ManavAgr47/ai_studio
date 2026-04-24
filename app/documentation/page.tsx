@@ -30,10 +30,10 @@ export default function CompanyOutline() {
 
                             {/* Year established */}
                             <div className="text-primary md:text-right font-medium text-lg pt-1">
-                                Year Established
+                                Established
                             </div>
                             <div className="text-white text-lg">
-                                2026
+                                1st April 2026
                             </div>
 
                             {/* Vision */}
@@ -85,7 +85,7 @@ export default function CompanyOutline() {
                                 Address
                             </div>
                             <div className="text-white text-lg text-white/90">
-                                ask Mains
+                                Rajiv Bhawan, IIT Roorkee, Uttarakhand, 247667
                             </div>
 
                             {/* Contact */}
@@ -93,7 +93,7 @@ export default function CompanyOutline() {
                                 Contact
                             </div>
                             <div className="text-white text-lg text-white/90">
-                                ask Mains
+                                hardikadvani1910@gmail.com
                             </div>
 
                         </div>
