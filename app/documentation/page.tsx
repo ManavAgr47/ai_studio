@@ -11,9 +11,9 @@ export default function CompanyOutline() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                 >
-                    <div className="mb-16 text-center md:text-left">
-                        <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-2 md:mb-0">
-                            Company Outline
+                    <div className="text-center max-w-3xl mx-auto mb-20">
+                        <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-6">
+                            Company <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Outline</span>
                         </h1>
                     </div>
 

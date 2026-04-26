@@ -1208,6 +1208,9 @@ h1, h2, h3, h4, h5, h6 {
 .max-w-5xl{
   max-width: 64rem;
 }
+.max-w-6xl{
+  max-width: 72rem;
+}
 .max-w-7xl{
   max-width: 80rem;
 }
@@ -2704,6 +2707,12 @@ h1, h2, h3, h4, h5, h6 {
   --tw-text-opacity: 1;
   color: hsl(var(--muted-foreground) / var(--tw-text-opacity, 1));
 }
+.placeholder\:text-white\/20::-moz-placeholder{
+  color: rgb(255 255 255 / 0.2);
+}
+.placeholder\:text-white\/20::placeholder{
+  color: rgb(255 255 255 / 0.2);
+}
 .after\:pointer-events-none::after{
   content: var(--tw-content);
   pointer-events: none;
@@ -2913,6 +2922,9 @@ h1, h2, h3, h4, h5, h6 {
   --tw-border-opacity: 1;
   border-color: hsl(var(--accent) / var(--tw-border-opacity, 1));
 }
+.focus\:border-primary\/50:focus{
+  border-color: hsl(var(--primary) / 0.5);
+}
 .focus\:border-secondary:focus{
   --tw-border-opacity: 1;
   border-color: hsl(var(--secondary) / var(--tw-border-opacity, 1));
@@ -2954,6 +2966,9 @@ h1, h2, h3, h4, h5, h6 {
 .focus\:ring-primary:focus{
   --tw-ring-opacity: 1;
   --tw-ring-color: hsl(var(--primary) / var(--tw-ring-opacity, 1));
+}
+.focus\:ring-primary\/50:focus{
+  --tw-ring-color: hsl(var(--primary) / 0.5);
 }
 .focus\:ring-ring:focus{
   --tw-ring-opacity: 1;
@@ -3726,10 +3741,6 @@ h1, h2, h3, h4, h5, h6 {
     grid-column: span 2 / span 2;
   }
 
-  .md\:mb-0{
-    margin-bottom: 0px;
-  }
-
   .md\:block{
     display: block;
   }
@@ -3796,10 +3807,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .md\:pt-48{
     padding-top: 12rem;
-  }
-
-  .md\:text-left{
-    text-align: left;
   }
 
   .md\:text-right{

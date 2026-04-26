@@ -84,7 +84,7 @@ export default function Contact() {
               </div>
 
               <a
-                href="mailto:systems@aiberry.io"
+                href="mailto:hardikadvani1910@gmail.com"
                 className="flex items-center gap-4 group"
               >
                 <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-all border border-white/10 group-hover:border-primary/50">
@@ -93,7 +93,7 @@ export default function Contact() {
                 <div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wider mb-1 font-medium">Email Engineering</div>
                   <div className="text-lg font-medium text-white/90 group-hover:text-white transition-colors">
-                    systems@aiberry.io
+                    hardikadvani1910@gmail.com
                   </div>
                 </div>
               </a>

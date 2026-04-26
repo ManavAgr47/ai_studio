@@ -66,7 +66,7 @@ export default function Pricing() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Price List
+            Price <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">List</span>
           </motion.h1>
           <motion.p
             className="text-lg text-muted-foreground mt-4"
