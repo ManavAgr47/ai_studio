@@ -21,7 +21,7 @@ export default function CompanyOutline() {
                         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-x-12 gap-y-12">
 
                             {/* Name */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Name
                             </div>
                             <div className="text-white text-lg font-semibold">
@@ -29,7 +29,7 @@ export default function CompanyOutline() {
                             </div>
 
                             {/* Year established */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Established
                             </div>
                             <div className="text-white text-lg">
@@ -37,7 +37,7 @@ export default function CompanyOutline() {
                             </div>
 
                             {/* Vision */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Our Vision
                             </div>
                             <div className="text-white text-lg leading-relaxed">
@@ -53,7 +53,7 @@ export default function CompanyOutline() {
                             </div>
 
                             {/* Team */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Founding Team
                             </div>
                             <div className="text-white text-lg space-y-6">
@@ -69,7 +69,7 @@ export default function CompanyOutline() {
                             </div>
 
                             {/* Shareholders */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Shareholders
                             </div>
                             <div className="text-white text-lg space-y-4">
@@ -81,7 +81,7 @@ export default function CompanyOutline() {
                             </div>
 
                             {/* Address */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Address
                             </div>
                             <div className="text-white text-lg text-white/90">
@@ -89,7 +89,7 @@ export default function CompanyOutline() {
                             </div>
 
                             {/* Contact */}
-                            <div className="text-primary md:text-right font-medium text-lg pt-1">
+                            <div className="text-primary md:text-right font-medium text-lg">
                                 Contact
                             </div>
                             <div className="text-white text-lg text-white/90">

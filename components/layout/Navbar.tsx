@@ -24,7 +24,7 @@ export function Navbar() {
     { label: "Student Access", href: "/contribute" },
     { label: "Internship Matching", href: "/internships" },
     { label: "AI Development", href: "/ai-development" },
-    { label: "Pricing", href: "/pricing" },
+    // { label: "Pricing", href: "/pricing" },
     { label: "Company Outline", href: "/documentation" },
     { label: "Contact Us", href: "/contact" },
   ];
