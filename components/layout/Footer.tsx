@@ -29,7 +29,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground max-w-sm mb-8">
-              AI Runway for Students<br />
+              AI Autobahn for Students<br />
               We help students around the world leverage AI and expand their potential.
             </p>
             <div className="flex items-center gap-4">

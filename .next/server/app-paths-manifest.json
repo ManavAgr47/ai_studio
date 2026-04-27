@@ -1,7 +1,7 @@
 {
   "/contribute/page": "app/contribute/page.js",
   "/internships/page": "app/internships/page.js",
-  "/contact/page": "app/contact/page.js",
   "/ai-development/page": "app/ai-development/page.js",
-  "/documentation/page": "app/documentation/page.js"
+  "/documentation/page": "app/documentation/page.js",
+  "/contact/page": "app/contact/page.js"
 }
