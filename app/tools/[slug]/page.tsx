@@ -1,7 +1,12 @@
+import { toolsData } from "@/lib/data";
+
+export function generateStaticParams() {
+  return toolsData.map((tool) => ({ slug: tool.slug }));
+}
+
 "use client";
 
 import { MainLayout } from "@/components/layout/MainLayout";
-import { toolsData } from "@/lib/data";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, ChevronRight, Loader2 } from "lucide-react";
 import Link from "next/link";
