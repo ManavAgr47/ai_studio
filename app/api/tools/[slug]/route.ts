@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { toolsData } from "@/lib/data";
 
+export function generateStaticParams() {
+  return toolsData.map((tool) => ({ slug: tool.slug }));
+}
+
 export async function GET(
     request: Request,
     context: any

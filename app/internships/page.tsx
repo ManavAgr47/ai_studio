@@ -51,7 +51,7 @@ export default function Internships() {
                             <p>We handle sourcing, screening, and matching — you get ready-to-work interns.</p>
                             <p>Partner with us through the AI Grant program.</p>
                         </div>
-                        <Link href="/ai-grant">
+                        <Link href="/sponsors/internships">
                             <ButtonGlow variant="outline" className="w-full flex items-center justify-center">
                                 Register as a Company <ArrowRight className="w-4 h-4 ml-2" />
                             </ButtonGlow>

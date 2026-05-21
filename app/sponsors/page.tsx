@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { MainLayout } from "@/components/layout/MainLayout";
+import Link from "next/link";
 import "./sponsors.css";
 
 export default function SponsorsPage() {
@@ -124,6 +125,11 @@ export default function SponsorsPage() {
                 <div className="icon" style={{fontSize: "2.5rem"}}>🤝</div>
                 <h3 style={{fontSize: "1.5rem", marginBottom: "16px"}}>Internship Matching with Top AI Talent</h3>
                 <p style={{fontSize: "1.05rem"}}>We offer internship matching with AI talent from top-tier universities.<br/><br/>Please use this as one of the options for your company&apos;s talent acquisition strategy.</p>
+                <div style={{marginTop: "24px"}}>
+                  <Link href="/sponsors/internships" className="s-btn s-btn-primary" style={{textDecoration: "none", display: "inline-flex"}}>
+                    Explore Internship Matching Program &rarr;
+                  </Link>
+                </div>
               </div>
               <div className="benefit glass reveal">
                 <div className="icon">🌟</div>

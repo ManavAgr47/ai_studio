@@ -18,7 +18,7 @@ export const api = {
   tools: {
     list: {
       method: 'GET' as const,
-      path: '/api/tools' as const,
+      path: '/api/tools-list' as const,
       responses: {
         200: z.array(z.custom<typeof tools.$inferSelect>()),
       },
