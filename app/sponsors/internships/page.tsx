@@ -124,9 +124,9 @@ export default function SponsorInternshipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Sponsor AI Grants. <br />
+            AI Internship Matching <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent text-glow">
-              Hire Elite AI Interns.
+              for High-Growth Teams.
             </span>
           </motion.h1>
 
@@ -136,8 +136,7 @@ export default function SponsorInternshipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Bridge the AI divide in India by funding premium AI tools for outstanding students. 
-            In return, secure exclusive, direct recruitment channels to match with pre-vetted AI developers and machine learning engineers.
+            Fund premium AI tools for talented students and recruit directly from a curated AI talent pool.
           </motion.p>
 
           <motion.div
