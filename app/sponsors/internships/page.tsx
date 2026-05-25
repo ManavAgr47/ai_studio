@@ -17,11 +17,14 @@ import {
   Building2, 
   Send,
   HelpCircle,
-  FileText
+  FileText,
+  AlertTriangle,
+  TrendingUp,
+  Percent,
+  ChevronDown,
+  ChevronUp
 } from "lucide-react";
-import Link from "next/link";
 import { ButtonGlow } from "@/components/ui/ButtonGlow";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 // Mock student candidates to showcase talent pool
@@ -58,6 +61,29 @@ const MOCK_CANDIDATES = [
   }
 ];
 
+const FAQs = [
+  {
+    q: "How are students selected?",
+    a: "We source candidates from India's top technical institutes (IITs, NITs) and top developer communities. Candidates undergo a 3-stage vetting process evaluating core programming foundations, open-source portfolio contributions, and specialized capability in building generative AI applications, vector search systems, and agentic workflows."
+  },
+  {
+    q: "What does sponsorship include?",
+    a: "Each $100/mo sponsorship funds premium AI tooling, LLM APIs, GPU sandbox hosting, and expert developer mentorship for 1 high-performing student. In return, your company gets standard partner listing, full resume access, and direct placement matching for internships."
+  },
+  {
+    q: "How does recruitment access work?",
+    a: "You get access to a curated dashboard of sponsored candidates, featuring verified Git portfolios, CGPAs, and shipped sandbox projects. You can shortlist candidates directly and request matching interviews. There are zero placement commissions or backend hiring fees."
+  },
+  {
+    q: "Is this sponsorship CSR-eligible or recruiting?",
+    a: "It is both. Sponsoring funds educational tools and premium platform access for high-performing students who would otherwise face financial barriers. This fulfills social impact/CSR goals while serving as an elite talent acquisition channel."
+  },
+  {
+    q: "What kind of students participate?",
+    a: "Undergraduates and master's students specializing in Computer Science, Artificial Intelligence, and related engineering disciplines at India's premier technical universities. Every candidate has shipped at least one complex AI application in our sandbox."
+  }
+];
+
 export default function SponsorInternshipsPage() {
   // ROI Calculator state
   const [studentsSponsored, setStudentsSponsored] = useState(5);
@@ -69,25 +95,28 @@ export default function SponsorInternshipsPage() {
   const [selectedTier, setSelectedTier] = useState("Big Company");
   const [message, setMessage] = useState("");
   
-  // Candidate Inquiry State
-  const [selectedCandidate, setSelectedCandidate] = useState<string | null>(null);
+  // FAQ accordion state
+  const [faqOpenIndex, setFaqOpenIndex] = useState<number | null>(null);
   
   const formRef = useRef<HTMLDivElement>(null);
 
   // Form submission handler
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API call
     setFormSubmitted(true);
   };
 
   // Scroll to form helper
-  const scrollToForm = (tier?: string, candidateId?: string) => {
+  const scrollToForm = (tier?: string, candidateId?: string, intentType?: string) => {
     if (tier) {
       setSelectedTier(tier);
     }
     if (candidateId) {
       setMessage(`Hi, we are interested in discussing internship matching, specifically looking at Candidate ${candidateId} or students with similar profiles.`);
+    } else if (intentType === "demo") {
+      setMessage("Hi, we would like to book a demo/call to discuss the AI internship sponsorship program and recruiting matching options.");
+    } else if (intentType === "founding") {
+      setMessage("Hi, we want to inquire about the remaining spots in the Founding Sponsor Cohort and custom recruitment pipelines.");
     }
     formRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -105,9 +134,10 @@ export default function SponsorInternshipsPage() {
         {/* Glow effect backgrounds */}
         <div className="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/10 blur-[150px] pointer-events-none" />
         <div className="absolute bottom-[20%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-secondary/10 blur-[150px] pointer-events-none" />
+        <div className="absolute top-[50%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-accent/5 blur-[180px] pointer-events-none" />
 
         {/* HERO SECTION */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
+        <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -124,175 +154,259 @@ export default function SponsorInternshipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            AI Internship Matching <br />
+            Sponsor{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent text-glow">
-              for High-Growth Teams.
+              AI Internships.
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed font-sans"
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed font-sans"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Fund premium AI tools for talented students and recruit directly from a curated AI talent pool.
+            Fund premium AI tools and internships for high-performing students while building an exclusive recruitment pipeline of vetted AI engineers and researchers.
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <ButtonGlow onClick={() => scrollToForm()} size="lg">
-              Partner with Us <ArrowRight className="w-5 h-5 ml-2" />
+            <ButtonGlow onClick={() => scrollToForm(undefined, undefined, "sponsor")} size="lg" className="w-full sm:w-auto">
+              Become a Sponsor
             </ButtonGlow>
-            <ButtonGlow variant="outline" onClick={() => {
-              document.getElementById("candidates-preview")?.scrollIntoView({ behavior: "smooth" });
-            }} size="lg">
-              Explore Talent Profiles
+            <ButtonGlow variant="outline" onClick={() => scrollToForm(undefined, undefined, "demo")} size="lg" className="w-full sm:w-auto">
+              Book a Demo
             </ButtonGlow>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="mt-8 text-xs sm:text-sm text-muted-foreground uppercase font-mono tracking-wider"
+          >
+            Access students from IITs, NITs, and top AI communities.
           </motion.div>
         </section>
 
-        {/* PROBLEM & SYNERGY SECTION */}
-        <section className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            <div className="lg:col-span-6 space-y-6">
-              <div className="text-secondary font-display font-semibold uppercase tracking-wider text-sm flex items-center gap-2">
-                <Briefcase className="w-4 h-4" />
-                The Talent Paradigm
+        {/* TRUST / STATS STRIP */}
+        <section className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full mb-16">
+          <div className="glass-panel rounded-3xl border border-white/5 p-8 relative overflow-hidden bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10 text-center">
+              <div className="flex flex-col justify-center items-center">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">500+</span>
+                <span className="text-xs sm:text-sm text-muted-foreground mt-2 uppercase tracking-wider font-mono">AI Students</span>
               </div>
-              <h2 className="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
-                How Sponsoring Solves Your Hiring Bottlenecks
-              </h2>
-              <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-                Finding developers with practical, hands-on experience in generative AI is exceptionally challenging. 
-                Most university students in emerging markets are locked out of premium models like GPT-4, Claude 3.5, and model hosting due to pricing.
-              </p>
-              
-              <div className="space-y-4 pt-4">
-                <div className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-base">Continuous Skill Verification</h4>
-                    <p className="text-muted-foreground text-sm">Students in our program actively build production-level apps, API integrations, and fine-tuning pipelines. You don&apos;t just read a resume; you evaluate actual shipped code.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-base">Direct matching, no agency markups</h4>
-                    <p className="text-muted-foreground text-sm">By sponsoring their AI licenses today, you bypass costly corporate recruitment agencies and hire interns directly at source.</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-base">ESG & Social Impact ROI</h4>
-                    <p className="text-muted-foreground text-sm">Quantifiable CSR impact supporting education equity, while establishing your brand as a technology pioneer within premier institutions.</p>
-                  </div>
-                </div>
+              <div className="flex flex-col justify-center items-center pt-6 md:pt-0">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">12+</span>
+                <span className="text-xs sm:text-sm text-muted-foreground mt-2 uppercase tracking-wider font-mono">Campuses</span>
+              </div>
+              <div className="flex flex-col justify-center items-center pt-6 md:pt-0">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">2,000+</span>
+                <span className="text-xs sm:text-sm text-muted-foreground mt-2 uppercase tracking-wider font-mono">Applicants</span>
+              </div>
+              <div className="flex flex-col justify-center items-center pt-6 md:pt-0">
+                <span className="font-display text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">90%+</span>
+                <span className="text-xs sm:text-sm text-muted-foreground mt-2 uppercase tracking-wider font-mono">Project Completion</span>
               </div>
             </div>
-
-            {/* Visual Process Panel */}
-            <div className="lg:col-span-6">
-              <div className="rounded-3xl glass-panel border border-white/10 p-8 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 -mt-8 -mr-8 w-32 h-32 bg-secondary/15 rounded-full blur-2xl pointer-events-none" />
-                <h3 className="font-display text-xl font-bold text-white mb-6 flex items-center gap-2">
-                  <Sparkles className="text-primary w-5 h-5 animate-pulse" />
-                  The Sponsorship Lifecycle
-                </h3>
-
-                <div className="relative border-l-2 border-primary/20 pl-8 ml-3 space-y-8">
-                  {/* Step 1 */}
-                  <div className="relative">
-                    <div className="absolute -left-12 top-0 w-8 h-8 rounded-full bg-background border border-primary/50 text-primary font-display flex items-center justify-center text-xs font-bold shadow-[0_0_12px_rgba(34,211,238,0.2)]">
-                      01
-                    </div>
-                    <h4 className="text-white font-bold text-base">License Funding</h4>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Your company funds premium AI grants ($100 per student/month). We provision them with full API and tool access.
-                    </p>
-                  </div>
-                  
-                  {/* Step 2 */}
-                  <div className="relative">
-                    <div className="absolute -left-12 top-0 w-8 h-8 rounded-full bg-background border border-secondary/50 text-secondary font-display flex items-center justify-center text-xs font-bold shadow-[0_0_12px_rgba(168,85,247,0.2)]">
-                      02
-                    </div>
-                    <h4 className="text-white font-bold text-base">Practical Training & Builds</h4>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Students build real-world AI applications, tools, and integrations within the IIT AI Studio sandbox, tracked via GitHub.
-                    </p>
-                  </div>
-
-                  {/* Step 3 */}
-                  <div className="relative">
-                    <div className="absolute -left-12 top-0 w-8 h-8 rounded-full bg-background border border-accent/50 text-accent font-display flex items-center justify-center text-xs font-bold shadow-[0_0_12px_rgba(236,72,153,0.2)]">
-                      03
-                    </div>
-                    <h4 className="text-white font-bold text-base">Curated Matching</h4>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Specify your job requirements. Our platform matches you with students who have verified skills matching your tech stack.
-                    </p>
-                  </div>
-
-                  {/* Step 4 */}
-                  <div className="relative">
-                    <div className="absolute -left-12 top-0 w-8 h-8 rounded-full bg-background border border-emerald-500/50 text-emerald-400 font-display flex items-center justify-center text-xs font-bold shadow-[0_0_12px_rgba(16,185,129,0.2)]">
-                      04
-                    </div>
-                    <h4 className="text-white font-bold text-base">Seamless Placement</h4>
-                    <p className="text-muted-foreground text-sm mt-1">
-                      Interview shortlisted candidates directly. Fast placements with zero recruiting agency fees or placement commissions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </section>
 
-        {/* INTERACTIVE CALCULATOR SECTION */}
-        <section className="py-20 relative z-10 bg-muted/30 border-t border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="text-primary font-display font-semibold uppercase tracking-wider text-sm flex items-center justify-center gap-2 mb-2">
-                <Sliders className="w-4 h-4" />
-                ROI & Cost Estimator
+        {/* PROBLEM SECTION */}
+        <section className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-red-500/10 text-red-400 border border-red-500/20 mb-3">
+              <AlertTriangle className="w-3.5 h-3.5" />
+              <span>The Resource & Talent Gap</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+              The Artificial Barrier in AI Development
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
+              Millions of talented developers are held back by tool access, while high-growth teams struggle to source validated builders.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Left Card: Student side */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-8 relative overflow-hidden group hover:border-red-500/25 transition-all duration-300">
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center font-display text-sm font-bold border border-red-500/20">
+                  01
+                </div>
+                <h3 className="text-white font-display text-2xl font-bold">Students: Locked Out of Tools</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  High-performing engineering students in emerging economies are blocked by the $20/month pricing gap of advanced AI models (Claude 3.5, GPT-4) and GPU APIs. A week of living expenses shouldn&apos;t limit the next generation of builders.
+                </p>
               </div>
-              <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
-                Calculate Your Recruitment Savings
-              </h2>
-              <p className="text-muted-foreground text-base sm:text-lg">
-                Drag the slider to see how many student grants you want to sponsor, and evaluate your cost savings compared to traditional recruitment agencies.
-              </p>
             </div>
 
+            {/* Right Card: Recruiter side */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-8 relative overflow-hidden group hover:border-red-500/25 transition-all duration-300">
+              <div className="space-y-4">
+                <div className="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center font-display text-sm font-bold border border-red-500/20">
+                  02
+                </div>
+                <h3 className="text-white font-display text-2xl font-bold">Teams: High Recruiting Overhead</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Recruiters waste months vetting traditional resumes that lack verified, hands-on generative AI experience. Middleman agencies charge exorbitant placement fees without verifying code quality or shipping velocity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* HOW IT WORKS SECTION */}
+        <section className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-3">
+              <Sliders className="w-3.5 h-3.5" />
+              <span>Sponsorship Workflow</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+              How the Program Works
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
+              A friction-free ecosystem connecting sponsor funding directly to practical education and talent recruitment.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative max-w-6xl mx-auto">
+            {/* Step 1 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-8 relative overflow-hidden flex flex-col justify-between group hover:border-primary/20 transition-all duration-300">
+              <div className="space-y-4">
+                <div className="text-primary font-mono text-xs uppercase tracking-wider font-bold">Step 01</div>
+                <h3 className="text-white font-display text-xl font-bold">Sponsors Fund AI Tools</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Companies fund tax-deductible AI grant sponsorships ($100 per student/month). We provision them with premium AI API keys, GPUs, and development sandboxes.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-8 relative overflow-hidden flex flex-col justify-between group hover:border-secondary/20 transition-all duration-300">
+              <div className="space-y-4">
+                <div className="text-secondary font-mono text-xs uppercase tracking-wider font-bold">Step 02</div>
+                <h3 className="text-white font-display text-xl font-bold">Students Build Real Projects</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Under expert developer mentorship, outstanding students build, refine, and ship production-ready LLM agents, vector search tools, and RAG architectures.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-8 relative overflow-hidden flex flex-col justify-between group hover:border-accent/20 transition-all duration-300">
+              <div className="space-y-4">
+                <div className="text-accent font-mono text-xs uppercase tracking-wider font-bold">Step 03</div>
+                <h3 className="text-white font-display text-xl font-bold">Sponsors Hire Direct</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Your engineering team gains direct recruiting access to these pre-vetted AI scholars. Hire top performers with zero recruitment agency commissions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SPONSOR BENEFITS SECTION & CALCULATOR */}
+        <section className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-secondary/10 text-secondary border border-secondary/20 mb-3">
+              <TrendingUp className="w-3.5 h-3.5" />
+              <span>Business ROI</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+              Sponsor Benefits & Outcomes
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
+              We align educational charity with concrete recruitment outcomes for your engineering team.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {/* Benefit 1 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-6 hover:border-primary/20 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Users2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-white font-display text-lg font-bold mb-2">Early Hiring Pipeline</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Connect and build relationships with elite AI talent months before they hit the open market. Secure talent before tech giants do.
+              </p>
+            </div>
+            {/* Benefit 2 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-6 hover:border-primary/20 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <DollarSign className="w-5 h-5" />
+              </div>
+              <h3 className="text-white font-display text-lg font-bold mb-2 font-display">Bypass Recruitment Fees</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Hire directly from the source. No agency commissions, no flat fees per candidate, and no hidden developer placement costs.
+              </p>
+            </div>
+            {/* Benefit 3 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-6 hover:border-primary/20 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Building2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-white font-display text-lg font-bold mb-2">Employer Branding</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Position your engineering organization as a premium technology partner and innovation supporter within India&apos;s elite universities (IITs, NITs).
+              </p>
+            </div>
+            {/* Benefit 4 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-6 hover:border-primary/20 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <CheckCircle2 className="w-5 h-5" />
+              </div>
+              <h3 className="text-white font-display text-lg font-bold mb-2 font-display">Vetted AI Builders</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Assess candidates based on real-world Git portfolios, actual application sandboxes, and tracked build velocity, not hypothetical tests.
+              </p>
+            </div>
+            {/* Benefit 5 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-6 hover:border-primary/20 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <h3 className="text-white font-display text-lg font-bold mb-2">Ecosystem Visibility</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Get your products, developer tools, APIs, and frameworks directly in front of thousands of high-velocity student builders.
+              </p>
+            </div>
+            {/* Benefit 6 */}
+            <div className="glass-panel rounded-3xl border border-white/5 p-6 hover:border-primary/20 transition-all duration-300">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                <Percent className="w-5 h-5" />
+              </div>
+              <h3 className="text-white font-display text-lg font-bold mb-2">Quantifiable CSR Impact</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Sponsor top-performing students from emerging markets, boosting education equity and closing the global AI tools pricing gap.
+              </p>
+            </div>
+          </div>
+
+          {/* Calculator inside the Benefits Section */}
+          <div className="mt-12 max-w-5xl mx-auto">
+            <div className="text-center mb-8">
+              <h3 className="text-white font-display text-xl sm:text-2xl font-bold">Estimate Your Recruitment Cost Savings</h3>
+              <p className="text-muted-foreground text-sm mt-1">See how funding grants compares directly to recruiter hiring fees.</p>
+            </div>
+            
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              
               {/* Slider Input */}
               <div className="lg:col-span-7 rounded-3xl glass-panel border border-white/10 p-8 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-white font-display text-xl font-bold mb-6">Select Sponsoring Scale</h3>
+                  <h4 className="text-white font-display text-lg font-bold mb-6">Select Sponsoring Scale</h4>
                   
-                  <div className="space-y-8">
+                  <div className="space-y-6">
                     <div className="flex justify-between items-center">
-                      <span className="text-muted-foreground font-medium">Students to Sponsor:</span>
-                      <span className="text-primary font-display text-3xl font-extrabold tracking-wider">{studentsSponsored} Students</span>
+                      <span className="text-muted-foreground text-sm font-medium">Students to Sponsor:</span>
+                      <span className="text-primary font-display text-2xl font-extrabold tracking-wider">{studentsSponsored} Students</span>
                     </div>
 
                     <input 
@@ -304,7 +418,7 @@ export default function SponsorInternshipsPage() {
                       className="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-primary" 
                     />
                     
-                    <div className="flex justify-between text-xs text-muted-foreground font-mono">
+                    <div className="flex justify-between text-[10px] text-muted-foreground font-mono">
                       <span>1 Student ($100/mo)</span>
                       <span>10 Students ($1,000/mo)</span>
                       <span>20 Students ($2,000/mo)</span>
@@ -313,12 +427,12 @@ export default function SponsorInternshipsPage() {
                 </div>
 
                 <div className="mt-8 p-6 rounded-2xl bg-white/5 border border-white/5 space-y-4">
-                  <h4 className="text-white font-bold text-sm">Included with this sponsorship:</h4>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" /> Full resume database access</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" /> Target matching algorithm</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" /> Featured job board placement</li>
-                    <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" /> Technical build portfolios</li>
+                  <h4 className="text-white font-bold text-xs uppercase tracking-wider">Included Sponsoring Perks:</h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-muted-foreground">
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0" /> Full resume database access</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0" /> Precise skills-matching</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0" /> Job board featured ads</li>
+                    <li className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0" /> Shipped student portfolios</li>
                   </ul>
                 </div>
               </div>
@@ -333,7 +447,7 @@ export default function SponsorInternshipsPage() {
                   </span>
 
                   <div className="space-y-1">
-                    <span className="text-muted-foreground text-sm font-medium">Monthly Investment</span>
+                    <span className="text-muted-foreground text-xs font-medium uppercase tracking-wider font-mono">Monthly Sponsorship</span>
                     <div className="text-white font-display text-4xl sm:text-5xl font-extrabold flex items-baseline">
                       ${monthlyCost}
                       <span className="text-muted-foreground text-sm font-normal font-sans ml-1">/ month</span>
@@ -341,11 +455,11 @@ export default function SponsorInternshipsPage() {
                   </div>
 
                   <div className="border-t border-white/10 pt-4 space-y-3">
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-xs sm:text-sm">
                       <span className="text-muted-foreground">Contract Term (6-mo min):</span>
                       <span className="text-white font-mono font-medium">${yearlyCost} total</span>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-xs sm:text-sm">
                       <span className="text-muted-foreground">Recruiter Fees Avoided:</span>
                       <span className="text-emerald-400 font-mono font-medium">~${averageRecruitingAgencyFee * Math.ceil(studentsSponsored / 2)}</span>
                     </div>
@@ -353,43 +467,72 @@ export default function SponsorInternshipsPage() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/10">
-                  <div className="text-muted-foreground text-xs uppercase tracking-wider mb-1 font-mono">Net Recruitment Savings</div>
+                  <div className="text-muted-foreground text-[10px] uppercase tracking-wider mb-1 font-mono">Net Recruitment Savings</div>
                   <div className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-primary font-display text-3xl sm:text-4xl font-extrabold text-glow">
                     ${savings} +
                   </div>
-                  <p className="text-xs text-muted-foreground mt-2 leading-normal">
-                    *Based on placement agency market rate averaging ${averageRecruitingAgencyFee} per AI engineering hire.
+                  <p className="text-[10px] text-muted-foreground mt-2 leading-normal">
+                    *Based on traditional agency rates averaging ${averageRecruitingAgencyFee} per developer hire.
                   </p>
                   
                   <button 
-                    onClick={() => scrollToForm(studentsSponsored >= 10 ? "Global Enterprise" : studentsSponsored >= 5 ? "Big Company" : "Startup")} 
-                    className="w-full mt-6 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/95 transition-all duration-300 shadow-[0_0_20px_hsl(var(--primary)/0.25)] flex items-center justify-center gap-2"
+                    onClick={() => scrollToForm(studentsSponsored >= 10 ? "Global Enterprise" : studentsSponsored >= 5 ? "Big Company" : "Startup", undefined, "scale")} 
+                    className="w-full mt-6 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/95 transition-all duration-300 shadow-[0_0_20px_hsl(var(--primary)/0.25)] flex items-center justify-center gap-2 text-sm"
                   >
-                    Select this scale <ArrowRight className="w-4 h-4" />
+                    Select Sponsoring Scale <ArrowRight className="w-4 h-4" />
                   </button>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
-        {/* CANDIDATES PREVIEW SECTION */}
-        <section id="candidates-preview" className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* TALENT PIPELINE SECTION */}
+        <section id="candidates-preview" className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="text-secondary font-display font-semibold uppercase tracking-wider text-sm flex items-center justify-center gap-2 mb-2">
-              <Search className="w-4 h-4" />
-              Talent Pool Preview
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/20 mb-3">
+              <Search className="w-3.5 h-3.5" />
+              <span>Elite Talent Pool</span>
             </div>
             <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
-              Meet Our Premium AI Scholars
+              Vetted AI Engineers & Researchers
             </h2>
             <p className="text-muted-foreground text-base sm:text-lg">
-              Here is a representative preview of students currently funded by the AI Grant, showcasing their verified specializations, technical projects, and availability.
+              We maintain a rigorous screening process to connect you with the top 5% of student builders.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Vetting process block */}
+          <div className="glass-panel rounded-3xl border border-white/5 p-8 max-w-5xl mx-auto mb-16 relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mt-12 -mr-12 w-48 h-48 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+            <h3 className="text-white font-display text-xl font-bold mb-6">Our 3-Stage Screening Process</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="space-y-2">
+                <span className="text-accent font-display text-3xl font-extrabold">01</span>
+                <h4 className="text-white font-bold text-sm">Academic & Git Audit</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  We filter candidates from IITs, NITs, and top tech communities. We evaluate open-source contributions, algorithms, and CGPA (&gt;8.5).
+                </p>
+              </div>
+              <div className="space-y-2">
+                <span className="text-accent font-display text-3xl font-extrabold">02</span>
+                <h4 className="text-white font-bold text-sm">Hands-on AI Test</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Students build, deploy, and fine-tune actual models. We test them on RAG systems, API integrations, and code optimization.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <span className="text-accent font-display text-3xl font-extrabold">03</span>
+                <h4 className="text-white font-bold text-sm">Sandbox Performance</h4>
+                <p className="text-muted-foreground text-xs leading-relaxed">
+                  Candidates build production-ready applications within the IIT AI Studio sandbox, tracked directly via shipped commits.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Candidates grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {MOCK_CANDIDATES.map((cand) => (
               <motion.div
                 key={cand.id}
@@ -401,10 +544,10 @@ export default function SponsorInternshipsPage() {
                   <div className="flex justify-between items-start gap-4">
                     <div>
                       <span className="text-xs font-mono text-primary font-bold">{cand.id}</span>
-                      <h3 className="text-white font-display text-xl font-bold mt-1">{cand.university}</h3>
-                      <p className="text-xs text-muted-foreground">{cand.degree}</p>
+                      <h3 className="text-white font-display text-lg font-bold mt-1 leading-tight">{cand.university}</h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">{cand.degree}</p>
                     </div>
-                    <Badge variant="secondary" className="bg-secondary/10 text-secondary border border-secondary/20 text-xs py-1">
+                    <Badge variant="secondary" className="bg-secondary/15 text-secondary border border-secondary/20 text-[10px] px-2 py-0.5">
                       GPA: {cand.cgpa}
                     </Badge>
                   </div>
@@ -412,12 +555,12 @@ export default function SponsorInternshipsPage() {
                   {/* Specialization & Skills */}
                   <div className="space-y-3">
                     <div>
-                      <span className="text-xs text-muted-foreground uppercase font-mono tracking-wider">Verified Focus</span>
-                      <p className="text-white font-bold text-sm mt-0.5">{cand.specialization}</p>
+                      <span className="text-[10px] text-muted-foreground uppercase font-mono tracking-wider">Verified Focus</span>
+                      <p className="text-white font-bold text-xs mt-0.5">{cand.specialization}</p>
                     </div>
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {cand.skills.map((skill) => (
-                        <Badge key={skill} variant="outline" className="bg-white/5 border-white/10 text-xs text-muted-foreground">
+                        <Badge key={skill} variant="outline" className="bg-white/5 border-white/10 text-[10px] text-muted-foreground">
                           {skill}
                         </Badge>
                       ))}
@@ -426,7 +569,7 @@ export default function SponsorInternshipsPage() {
 
                   {/* Project info */}
                   <div className="p-4 rounded-xl bg-white/5 border border-white/5">
-                    <span className="text-xs text-white font-bold flex items-center gap-1.5 mb-1.5">
+                    <span className="text-[10px] text-white font-bold flex items-center gap-1.5 mb-1.5">
                       <FileText className="w-3.5 h-3.5 text-primary" /> Shipped Project:
                     </span>
                     <p className="text-xs text-muted-foreground leading-relaxed">
@@ -436,7 +579,7 @@ export default function SponsorInternshipsPage() {
                 </div>
 
                 <div className="p-6 pt-0 border-t border-white/5 mt-auto">
-                  <div className="text-[11px] text-emerald-400 font-medium mb-4 flex items-center gap-1.5">
+                  <div className="text-[10px] text-emerald-400 font-medium mb-4 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     {cand.status}
                   </div>
@@ -452,188 +595,129 @@ export default function SponsorInternshipsPage() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground text-sm">
-              Need candidates with a specific stack (e.g. Rust, Go, TensorFlow, specific LLM fine-tuning)? <br />
-              <span className="text-white font-semibold">We build custom talent cohorts tailored directly to your engineering requirements.</span>
+          <div className="mt-12 text-center max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Need candidates with custom stacks (e.g. Rust, Go, CUDA, LLM fine-tuning)? <br />
+              <span className="text-white font-semibold">We can build and train custom student cohorts matching your exact engineering requirements.</span>
             </p>
           </div>
         </section>
 
-        {/* COMPARATIVE BENEFITS & TIERS TABLE */}
-        <section className="py-20 relative z-10 bg-muted/10 border-t border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <div className="text-accent font-display font-semibold uppercase tracking-wider text-sm flex items-center justify-center gap-2 mb-2">
-                <Building2 className="w-4 h-4" />
-                Partnership Tiers
-              </div>
-              <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
-                Sponsorship Plans & Benefits
+        {/* FOUNDING SPONSOR SECTION */}
+        <section className="py-20 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
+          <div className="rounded-3xl border border-amber-500/30 bg-gradient-to-r from-amber-500/5 via-transparent to-transparent p-8 md:p-12 relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+            <div className="max-w-3xl space-y-6">
+              <Badge className="bg-amber-500/10 text-amber-400 border border-amber-500/20 px-3 py-1 font-mono uppercase tracking-wider text-xs">
+                Limited Founding Sponsor Cohort
+              </Badge>
+              <h2 className="font-display text-3xl sm:text-5xl font-bold text-white leading-tight">
+                Secure Priority Access as a Founding Partner
               </h2>
-              <p className="text-muted-foreground text-base sm:text-lg">
-                Choose the scale that fits your hiring velocity. Sponsoring directly funds students while securing recruiter access.
+              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                Position your team ahead of the curve. Founding Sponsors gain direct access to students before graduation, prominent branding, and the ability to influence training curriculums.
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
               
-              {/* Startup Tier */}
-              <div className="rounded-3xl glass-panel border border-white/5 p-8 flex flex-col justify-between relative group hover:border-white/10 transition-all duration-300">
-                <div>
-                  <div className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Startups & SMEs</div>
-                  <h3 className="text-white font-display text-2xl font-bold mt-1">Sponsor Cohort</h3>
-                  <p className="text-muted-foreground text-xs mt-1">For companies with under 1,000 employees</p>
-                  
-                  <div className="my-6">
-                    <span className="text-white font-display text-4xl font-extrabold">$100</span>
-                    <span className="text-muted-foreground text-sm"> / month</span>
-                    <p className="text-xs text-muted-foreground/60 mt-1">6-month minimum commitment</p>
-                  </div>
-                  
-                  <ul className="space-y-3 border-t border-white/5 pt-6 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Sponsor 1 student per $100/mo</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Access to anonymized student resumes</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Feature 1 active internship posting</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Standard listing as AI Grant Partner</span>
-                    </li>
-                  </ul>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 text-xs sm:text-sm">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-white font-medium">First-pick recruitment matching</span>
                 </div>
-
-                <div className="mt-8 pt-6">
-                  <ButtonGlow 
-                    variant="outline" 
-                    className="w-full flex justify-center py-3.5" 
-                    onClick={() => scrollToForm("Startup")}
-                  >
-                    Select Startup Tier
-                  </ButtonGlow>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-white font-medium">Featured partner logo placement</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-white font-medium">Request custom technology cohorts</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
+                  <span className="text-white font-medium">Influence educational curriculum</span>
                 </div>
               </div>
-
-              {/* Big Company Featured Tier */}
-              <div className="rounded-3xl glass-panel border border-secondary/40 p-8 flex flex-col justify-between relative group hover:border-secondary/60 transition-all duration-300 shadow-[0_0_50px_rgba(168,85,247,0.15)] bg-gradient-to-b from-secondary/5 to-transparent">
-                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-secondary to-accent text-white font-mono font-bold text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(168,85,247,0.4)]">
-                  Most Popular for Hiring
-                </div>
-                
-                <div>
-                  <div className="text-secondary font-mono text-xs uppercase tracking-wider mt-2">Growing Teams</div>
-                  <h3 className="text-white font-display text-2xl font-bold mt-1 text-transparent bg-clip-text bg-gradient-to-r from-white to-secondary">Big Companies</h3>
-                  <p className="text-muted-foreground text-xs mt-1">1,000 to 10,000 employees</p>
-                  
-                  <div className="my-6">
-                    <span className="text-white font-display text-4xl font-extrabold">$500</span>
-                    <span className="text-muted-foreground text-sm"> / month</span>
-                    <p className="text-xs text-muted-foreground/60 mt-1">6-month minimum commitment</p>
-                  </div>
-                  
-                  <ul className="space-y-3 border-t border-white/5 pt-6 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span className="text-white font-medium">Sponsor 5+ students simultaneously</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span>Full resume & project portfolio access</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span>Featured matching (match by exact skills)</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span>Feature unlimited internship postings</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0 mt-0.5" />
-                      <span>Quarterly student progress reports</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-6">
-                  <ButtonGlow 
-                    variant="secondary" 
-                    className="w-full flex justify-center py-3.5" 
-                    onClick={() => scrollToForm("Big Company")}
-                  >
-                    Select Featured Tier
-                  </ButtonGlow>
-                </div>
+              
+              <div className="pt-6">
+                <ButtonGlow 
+                  onClick={() => scrollToForm("Big Company", undefined, "founding")}
+                  className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-black border-none shadow-[0_0_20px_rgba(245,158,11,0.35)]"
+                >
+                  Secure Founding Spot
+                </ButtonGlow>
               </div>
-
-              {/* Enterprise Tier */}
-              <div className="rounded-3xl glass-panel border border-white/5 p-8 flex flex-col justify-between relative group hover:border-white/10 transition-all duration-300">
-                <div>
-                  <div className="text-muted-foreground font-mono text-xs uppercase tracking-wider">Global Enterprises</div>
-                  <h3 className="text-white font-display text-2xl font-bold mt-1">Custom Cohort</h3>
-                  <p className="text-muted-foreground text-xs mt-1">Over 10,000 employees</p>
-                  
-                  <div className="my-6">
-                    <span className="text-white font-display text-4xl font-extrabold">Bespoke</span>
-                    <p className="text-xs text-muted-foreground/60 mt-1">Bespoke pricing based on recruitment volume</p>
-                  </div>
-                  
-                  <ul className="space-y-3 border-t border-white/5 pt-6 text-sm text-muted-foreground">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-white font-medium">Bespoke student training cohorts</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Co-branded curriculum & private hackathons</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Dedicated recruiter matching assistant</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Direct hiring pipelines & private interviews</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="mt-8 pt-6">
-                  <ButtonGlow 
-                    variant="outline" 
-                    className="w-full flex justify-center py-3.5" 
-                    onClick={() => scrollToForm("Global Enterprise")}
-                  >
-                    Inquire for Enterprise
-                  </ButtonGlow>
-                </div>
-              </div>
-
             </div>
           </div>
         </section>
 
-        {/* INTERACTIVE FORM SECTION */}
-        <section ref={formRef} className="py-20 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl glass-panel border border-white/10 p-8 md:p-12 relative overflow-hidden">
+        {/* FAQ SECTION */}
+        <section className="py-20 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-3">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Questions & Answers</span>
+            </div>
+            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-muted-foreground text-base sm:text-lg">
+              Everything you need to know about the AI Grant and internship sponsorship.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {FAQs.map((faq, index) => {
+              const isOpen = faqOpenIndex === index;
+              return (
+                <div 
+                  key={index} 
+                  className="glass-panel rounded-2xl border border-white/5 overflow-hidden transition-all duration-300 hover:border-white/10"
+                >
+                  <button
+                    onClick={() => setFaqOpenIndex(isOpen ? null : index)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                  >
+                    <span className="text-white font-bold text-sm sm:text-base font-display">{faq.q}</span>
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 text-primary flex-shrink-0 ml-4" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0 ml-4" />
+                    )}
+                  </button>
+                  
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <div className="px-6 pb-5 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-white/5 pt-3">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* FINAL CTA SECTION & INTAKE FORM */}
+        <section className="py-20 relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5" ref={formRef}>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="font-display text-3xl sm:text-5xl font-bold text-white mb-4">
+              Build Your AI Hiring Pipeline Today
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-base">
+              Submit your hiring and sponsorship preferences below. Our partnership manager will reach out with resume matches in 24-48 hours.
+            </p>
+          </div>
+
+          <div className="rounded-3xl glass-panel border border-white/10 p-8 md:p-12 relative overflow-hidden bg-gradient-to-b from-card/80 to-card/20">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
             
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <h2 className="font-display text-3xl font-bold text-white mb-2">Build Your AI Talent Channel</h2>
-              <p className="text-muted-foreground text-sm">
-                Submit this application form. Our partnerships coordinator will reach out to organize matching requirements and resume previews within 24-48 hours.
-              </p>
-            </div>
-
             <AnimatePresence mode="wait">
               {!formSubmitted ? (
                 <motion.form 
@@ -645,58 +729,58 @@ export default function SponsorInternshipsPage() {
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs text-white font-bold uppercase tracking-wider">Company Name</label>
+                      <label className="text-xs text-white font-bold uppercase tracking-wider font-mono">Company Name</label>
                       <input 
                         type="text" 
                         required 
                         value={companyName}
                         onChange={(e) => setCompanyName(e.target.value)}
                         placeholder="e.g. Vertex AI Inc." 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:border-primary/50 text-sm transition-colors"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:border-primary/50 text-sm transition-colors font-sans"
                       />
                     </div>
                     
                     <div className="space-y-2">
-                      <label className="text-xs text-white font-bold uppercase tracking-wider">Contact Email</label>
+                      <label className="text-xs text-white font-bold uppercase tracking-wider font-mono">Contact Email</label>
                       <input 
                         type="email" 
                         required 
                         value={contactEmail}
                         onChange={(e) => setContactEmail(e.target.value)}
                         placeholder="e.g. recruit@company.com" 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:border-primary/50 text-sm transition-colors"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:border-primary/50 text-sm transition-colors font-sans"
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs text-white font-bold uppercase tracking-wider">Target Sponsorship Plan</label>
+                    <label className="text-xs text-white font-bold uppercase tracking-wider font-mono">Target Sponsorship Plan</label>
                     <select 
                       value={selectedTier}
                       onChange={(e) => setSelectedTier(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 text-sm transition-colors"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary/50 text-sm transition-colors font-sans"
                     >
                       <option className="bg-card text-white" value="Startup">Startups & SMEs ($100/mo - 1 Student)</option>
                       <option className="bg-card text-white" value="Big Company">Big Companies ($500/mo - 5+ Students)</option>
-                      <option className="bg-card text-white" value="Global Enterprise">Global Enterprise (Custom / Cohort Support)</option>
+                      <option className="bg-card text-white" value="Global Enterprise">Global Enterprise (Custom Cohort Support)</option>
                     </select>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs text-white font-bold uppercase tracking-wider">Internship Requirements / Messages</label>
+                    <label className="text-xs text-white font-bold uppercase tracking-wider font-mono">Hiring Requirements / Message</label>
                     <textarea 
                       rows={4}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="List desired technology stacks, internship length, or specific roles you are looking to hire..." 
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:border-primary/50 text-sm transition-colors resize-none"
+                      placeholder="List desired tech stacks, internship timeline, or specific candidate codes you are interested in..." 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted-foreground focus:outline-none focus:border-primary/50 text-sm transition-colors resize-none font-sans"
                     />
                   </div>
 
                   <div className="pt-4">
                     <button 
                       type="submit" 
-                      className="w-full py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/95 transition-all duration-300 shadow-[0_0_25px_rgba(34,211,238,0.3)] flex items-center justify-center gap-2"
+                      className="w-full py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:bg-primary/95 transition-all duration-300 shadow-[0_0_25px_rgba(34,211,238,0.3)] flex items-center justify-center gap-2 text-sm uppercase tracking-wider font-mono"
                     >
                       Apply for Sponsorship & Talent Access <Send className="w-4 h-4" />
                     </button>
@@ -712,18 +796,28 @@ export default function SponsorInternshipsPage() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-white font-display text-2xl font-bold">Application Received!</h3>
-                  <p className="text-muted-foreground text-sm max-w-md mx-auto">
-                    Thank you for applying. A representative from IIT AI Studio will reach out to <strong className="text-white">{contactEmail}</strong> to review your talent pipeline specs.
+                  <p className="text-muted-foreground text-sm max-w-md mx-auto leading-relaxed">
+                    Thank you. A partnership coordinator from IIT AI Studio will reach out to <strong className="text-white">{contactEmail}</strong> to review your requirements and provide curated resume portfolios.
                   </p>
                   
                   <div className="pt-6">
-                    <ButtonGlow variant="outline" onClick={() => setFormSubmitted(false)}>
+                    <ButtonGlow variant="outline" onClick={() => setFormSubmitted(false)} size="sm">
                       Submit Another Inquiry
                     </ButtonGlow>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
+          </div>
+          
+          <div className="contact-row mt-12 flex justify-center gap-6">
+            <a href="mailto:contact@iitaistudio.com" className="text-sm text-muted-foreground hover:text-white flex items-center gap-2 transition-colors">
+              <Send className="w-4 h-4 text-primary" /> contact@iitaistudio.com
+            </a>
+            <span className="text-muted-foreground/30">|</span>
+            <a href="https://www.IITAIS.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-white flex items-center gap-2 transition-colors">
+              🌐 www.IITAIS.com
+            </a>
           </div>
         </section>
 
