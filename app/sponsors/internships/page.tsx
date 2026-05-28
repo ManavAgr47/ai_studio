@@ -63,19 +63,19 @@ const SAMPLE_CANDIDATES = [
 const FAQS = [
   {
     q: "How are students selected?",
-    a: "We source candidates from India's top technical institutes (IITs, NITs) and top developer communities. Candidates undergo a 3-stage vetting process evaluating core programming foundations, open-source portfolio contributions, and specialized capability in building generative AI applications, vector search systems, and agentic workflows."
+    a: "We select members from students at IITs, some of India’s top-tier universities.\n\nStudents apply through our AI Grant Program, which supports those who want access to premium AI tools. As part of the application, students submit their resumes along with details such as their academic year, major, how they currently use AI, and how they plan to use it in the future.\n\nBased on this information, we conduct interviews to evaluate their AI development knowledge, practical experience, and problem-solving abilities. We then select students who demonstrate strong AI skills, initiative, and real-world application potential."
   },
   {
     q: "How does the recruitment matching process work?",
-    a: "After you schedule a call and share your requirements, we match you with vetted candidates from our talent pool. You can interview them directly and offer them internships. There are no additional placement fees or success commissions."
+    a: "First, schedule a consultation call with us and share your hiring requirements.\n\nBased on your needs, we shortlist and introduce carefully selected candidates from our talent pool. After confirming the candidates’ interest in your company, you can interview them directly.\n\nIf both parties are satisfied, you may proceed with offering an internship opportunity."
   },
   {
-    q: "What is the cost structure?",
-    a: "Sponsorship starts at $100/mo per student. This directly funds premium AI tools, API credits, and GPU access for the student. It provides you with a dedicated talent channel with no placement fees."
+    q: "What is the pricing structure?",
+    a: "Our pricing is based on a fixed monthly subscription model determined by your company size and hiring requirements.\n\nFor startups and small-to-medium-sized companies, plans start at $100 per month.\n\nThere are no additional referral fees, success fees, or placement charges beyond the monthly subscription."
   },
   {
-    q: "How does the AI Grant relate to this?",
-    a: "The AI Grant is our backend infrastructure that enables this. We fund the students' access to premium tools, making sure they have the resources to build advanced skills. Partner companies then get access to this elite pool of developers."
+    q: "How is the AI Grant Program related to this service?",
+    a: "IIT AI Studio uses a portion of the revenue generated from this service to support its AI Grant Program, which provides students with access to premium AI tools and resources.\n\nThrough this program, students can strengthen their practical AI skills and work on real-world applications. At the same time, the program helps us identify highly motivated and capable AI talent that we can introduce to partner companies."
   }
 ];
 
@@ -666,7 +666,7 @@ export default function SponsorInternshipsPage() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="px-6 pb-4 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-white/5 pt-3">
+                        <div className="px-6 pb-4 text-xs sm:text-sm text-muted-foreground leading-relaxed border-t border-white/5 pt-3 whitespace-pre-line">
                           {faq.a}
                         </div>
                       </motion.div>
