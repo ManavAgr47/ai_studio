@@ -21,7 +21,7 @@ export default function Home() {
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-primary text-sm font-medium mb-8 border border-primary/20 bg-primary/5"
         >
           <Sparkles className="w-4 h-4" />
-          <span>Founders: Dai Murata & Hardik Advani</span>
+          <span>Founders: Hardik Advani, Manav Agrawal, Karan Kaurav</span>
         </motion.div>
 
         <motion.h1

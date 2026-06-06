@@ -295,6 +295,12 @@ export default function SponsorInternshipsPage() {
               </p>
             </div>
             <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
+              <h3 className="text-white font-display text-lg font-bold mb-2">Claude Code &amp; Cowork</h3>
+              <p className="text-muted-foreground text-xs leading-relaxed">
+                Building with agentic CLI tools, setting up internal copilots, and designing collaborative human-in-the-loop workflows.
+              </p>
+            </div>
+            <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-white/10 transition-colors">
               <h3 className="text-white font-display text-lg font-bold mb-2">ChatGPT Codex</h3>
               <p className="text-muted-foreground text-xs leading-relaxed">
                 Utilizing advanced generative models, code generation engines, and automating software engineering processes.

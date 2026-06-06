@@ -251,7 +251,7 @@ export default function StudentsPage() {
                             <i className="fa-solid fa-plus"></i>
                         </button>
                         <div className="faq-answer">
-                            <p>IIT AI Studio was founded by Dai Murata &amp; Hardik Advani.</p>
+                            <p>IIT AI Studio was founded by Hardik Advani, Manav Agrawal, and Karan Kaurav.</p>
                         </div>
                     </div>
                 </div>
