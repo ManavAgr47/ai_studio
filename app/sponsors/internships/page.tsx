@@ -52,8 +52,8 @@ const SAMPLE_CANDIDATES = [
   },
   {
     id: "AIS-STU-C",
-    university: "NIT Trichy",
-    degree: "B.Tech Electronics & Communication",
+    university: "IIT Delhi",
+    degree: "B.Tech Electrical Engineering",
     skills: ["Python", "AI automation", "Web scraping", "REST APIs", "Zapier", "Node.js"],
     project: "Created an automated lead generation pipeline that scrapes company data, generates personalized outreach emails using LLMs, and pushes to CRMs.",
     availability: "Internship-ready"
