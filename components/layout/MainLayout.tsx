@@ -4,7 +4,15 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { motion } from "framer-motion";
 
-export function MainLayout({ children }: { children: ReactNode }) {
+export function MainLayout({ 
+  children, 
+  customNavbar, 
+  customFooter 
+}: { 
+  children: ReactNode; 
+  customNavbar?: ReactNode; 
+  customFooter?: ReactNode; 
+}) {
   return (
     <div className="min-h-screen flex flex-col relative w-full overflow-hidden">
       {/* Global abstract background elements */}
@@ -13,7 +21,7 @@ export function MainLayout({ children }: { children: ReactNode }) {
         <div className="absolute top-[40%] right-[-10%] w-[30%] h-[50%] bg-secondary/10 rounded-full blur-[150px] opacity-50 mix-blend-screen" />
       </div>
       
-      <Navbar />
+      {customNavbar !== undefined ? customNavbar : <Navbar />}
       
       <motion.main 
         className="flex-grow pt-20 flex flex-col"
@@ -25,7 +33,7 @@ export function MainLayout({ children }: { children: ReactNode }) {
         {children}
       </motion.main>
       
-      <Footer />
+      {customFooter !== undefined ? customFooter : <Footer />}
     </div>
   );
 }
