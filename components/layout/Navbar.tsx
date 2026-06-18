@@ -21,6 +21,7 @@ export function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "AI Grant", href: "/ai-grant" },
+    { label: "Winners", href: "/winners" },
     { label: "Student Access", href: "/contribute" },
     { label: "Internship Matching", href: "/internships" },
     { label: "AI Development", href: "/ai-development" },

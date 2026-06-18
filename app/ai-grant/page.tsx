@@ -2,7 +2,7 @@
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ButtonGlow } from "@/components/ui/ButtonGlow";
 import { motion } from "framer-motion";
-import { Mail, GraduationCap, Building2, ArrowRight } from "lucide-react";
+import { Mail, GraduationCap, Building2, ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +15,20 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
+            <div className="mb-6">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-primary text-sm font-medium border border-primary/20 bg-primary/5 shadow-[0_0_15px_rgba(34,211,238,0.1)] hover:border-primary/45 transition-colors duration-300"
+              >
+                <Sparkles className="w-4 h-4 text-primary animate-pulse" />
+                <Link href="/winners" className="hover:underline flex items-center gap-1.5">
+                  Announcing AI Grant Winners! Meet the selected winners <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </motion.div>
+            </div>
+
             <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
               IIT AI Studio <span className="text-primary">AI Grants</span>
             </h1>
